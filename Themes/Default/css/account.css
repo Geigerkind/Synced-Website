@@ -1,0 +1,299 @@
+/*
+* GENERAL
+*/
+.account-box{
+	width: 718px;
+	height: 600px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+}
+
+/*
+* ACC LEFT
+*/
+.acc-left{
+	width: 216.5px;
+	height: 600px;
+}
+.acc-left-pic{
+	width: 216.5px;
+	height: 100px;
+	padding-top: 50px;
+	padding-bottom: 5px;
+}
+.acc-pic{
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 98px;
+	height: 98px;
+}
+.acc-left-pic-upload{
+	width: 216.5px;
+	height: 100px;
+}
+.acc-left-pic-upload-inside{
+	width: 100px;
+	height: 100px;
+}
+.file_upload_input, .file_upload_input_submit{
+    z-index: 217;
+    line-height: 0;
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+	-ms-filter: "alpha(opacity=0)";
+    cursor: pointer;
+    _cursor: hand;
+    margin: 0;
+    padding:0;
+    left:0;
+}
+.upload_label, .upload_label_submit, .upload_label:hover, .upload_label_submit:hover{
+    cursor:pointer;
+    text-align:center;
+    color:#fff;
+	display:block;
+    width:98px;
+    height:23px;
+    font-size:14px;
+    line-height:23px;
+	margin-top: 3px;
+	box-shadow: 0.25px 0.25px 2px 0.5px #000;
+}
+.upload_label:hover, .upload_label_submit:hover{
+	color: rgb(184,204,0);
+	background-color: rgb(88, 111, 117);
+}
+.acc-left-confirm{
+	width: 216.5px;
+	height: 245px;
+}
+.acc-left-confirm-inside{
+	width: 100px;
+	height: 100px;
+}
+
+/*
+* ACC RIGHT
+*/
+.acc-right{
+	width: 500px;
+	height: 600px;
+}
+.acc-right-navbar, .acc-right-submit{
+	width: 500px;
+	height: 50px;
+}
+.acc-navbar-button, .acc-navbar-button:hover{
+	text-transform: uppercase;
+	width: 224px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 22px;
+	cursor: pointer;
+}
+.acc-navbar-button:hover{
+	color: rgb(184,204,0);
+	background-color: rgb(88, 111, 117);
+}
+.acc-navbar-edit, .acc-navbar-edit:hover{
+	background: center no-repeat url('../../../account/img/wrench.png');
+	width: 49.5px;
+	height: 50px;
+	border-top-right-radius: 5px;
+	cursor: pointer;
+}
+.acc-navbar-edit:hover{
+	background: rgb(88, 111, 117) center no-repeat url('../../../account/img/wrench_hover.png');
+}
+.acc-right-content{
+	width: 500px;
+	height: 550px;
+}
+.acc-right-submit-general{
+	text-align: center;
+	line-height: 50px;
+	margin-top: 135px;
+}
+.acc-right-submit-char{
+	text-align: center;
+	line-height: 50px;
+	margin-top: 15px;
+}
+.acc-right-row{
+	width: 460px;
+	height: 50px;
+	padding: 20px 20px 20px 20px;
+	line-height: 25px;
+	font-size: 15px;
+}
+.acc-right-row-title{
+	width: 460px;
+	height: 24px;
+	text-transform: uppercase;
+}
+.acc-right-row-content{
+	width: 460px;
+	height: 25px;
+}
+.input-acc, .input-acc-dropdown{
+	width: 454px;
+	height: 20px;
+	margin-top: 3px;
+}
+.input-acc-dropdown{
+	width: 463px;
+	padding-left: 0px;
+}
+.input-acc-submit, .input-acc-submit:hover{
+	width: 160px;
+	height: 25px;
+}
+.char-top{
+	width: 480px;
+	height: 99px;
+}
+.char-top-pic{
+	background-size: 98px 98px;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 97.5px;
+	height: 98px;
+}
+.char-top-title{
+	width: 370px;
+	height: 24px;
+	line-height: 25px;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-left: 10px;
+}
+.char-top-content{
+	width: 370px;
+	height: 69px;
+	margin-left: 10px;
+	padding-top: 5px;
+}
+.char-dropdown{
+	width: 230px;
+	height: 25px;
+}
+.char-remove, .char-remove:hover{
+	width: 135px;
+	height: 25px;
+	margin-left: 5px;
+}
+.char-add, .char-add:hover{
+	width: 70px;
+	height: 25px;
+	margin-left: 5px;
+}
+.char-charName{
+	width: 210px;
+	height: 23px;
+}
+.button-select, .button-select:hover{
+	width: 70px;
+	height: 23px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 25px;
+	box-shadow: 0.25px 0.25px 1px 0.5px #000;
+	margin-top: 1px;
+	cursor: pointer;
+}
+.button-select:hover{
+	color: rgb(184, 204, 0);
+}
+.char-dropdown{
+	width: 220px;
+	height: 22px;
+	margin-top: 3px;
+}
+.char-dropdown-prof{
+	width: 105px;
+	height: 22px;
+	margin-top: 3px;
+}
+.char-text{
+	width: 210px;
+	height: 18px;
+	margin-top: 3px;
+}
+.acc-right-row-sepa{
+	width: 230px;
+	height: 50px;
+}
+.acc-right-row-sepa-title{
+	width: 230px;
+	height: 24px;
+}
+.acc-right-row-sepa-content{
+	width: 230px;
+	height: 25px;
+}
+
+/*
+* Checkbox
+* @link <http://cssdeck.com/labs/css-checkbox-styles>
+*/
+.squaredThree, .squaredThree2 {
+	width: 698px;	
+	margin: 5px auto;
+	position: relative;
+}
+
+.squaredThree label, .squaredThree2 label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	left: -2px;
+	border-radius: 4px;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+
+	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+	background: linear-gradient(top, #222 0%, #45484d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+.squaredThree label:after, .squaredThree2 label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squaredThree label:hover::after, .squaredThree2 label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.squaredThree input[type=checkbox]:checked + label:after, .squaredThree2 input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}

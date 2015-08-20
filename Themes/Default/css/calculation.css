@@ -1,0 +1,30 @@
+.rpcal-box{
+	width: 678px;
+	padding: 20px 20px 20px 20px;
+}
+.rpcal-top{
+	width: 678px;
+	height: 420px;
+}
+.rpcal-image{
+	width: 678px;
+	height: 400px;
+	box-shadow: 2px 2px 10px 2px black;
+}
+.rpcal-bottom{
+	width:678px;
+}
+.rpcal-table{
+	width: 676px;
+}
+.rpcal-row{
+	width: 676px;
+	height: 25px;
+}
+.rpcal-caloumn{
+	width: 135.2px;
+	heigtht: 25px;
+	line-height: 25px;
+	text-align: center;
+	font-size: 18px;
+}

@@ -1,0 +1,84 @@
+.roster-box{
+	width: 698px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+	padding-bottom: 0px;
+}
+.roster-class-row{
+	background-position: left 5px center;
+	background-repeat: no-repeat;
+	width: 663px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	padding-left: 35px;
+}
+.roster-player-container{
+	width: 686px;
+	border-top: none;
+	margin-bottom: 10px; 
+}
+.roster-player-row{
+	width: 686px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.roster-player-row-natio, .roster-player-row-name, .roster-player-row-rank, .roster-player-row-jg, .roster-player-row-toggle{
+	height: 25px;
+}
+.roster-player-row-natio, .roster-player-row-toggle{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+}
+.roster-player-row-name{
+	width: 160px;
+}
+.roster-player-row-rank{
+	width: 120px;
+}
+.roster-player-row-jg{
+	width: 346px;
+}
+.roster-player-row-toggle{
+	background-image: url('../../../roster/img/toggle.png');
+}
+.roster-player-char-box{
+	width: 674px;
+	border-top: none;
+	margin-bottom: 10px;
+}
+.roster-player-char-row{
+	width: 674px;
+	height: 20px;
+	line-height: 20px;
+}
+.roster-player-char-row-level, .roster-player-char-row-charname, .roster-player-char-row-race, .roster-player-char-row-class, .roster-player-char-row-spec, .roster-player-char-row-prof{
+	height: 20px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+.roster-player-char-row-level{
+	width: 25px;
+	text-align: center;
+	padding-left: 0px;
+}
+.roster-player-char-row-charname{
+	width: 100px;
+	padding-left: 0px;
+}
+.roster-player-char-row-race{
+	width: 80px;
+}
+.roster-player-char-row-class{
+	width: 70px;
+}
+.roster-player-char-row-spec{
+	width: 109px;
+}
+.roster-player-char-row-prof{
+	width: 95px;
+}

@@ -1,0 +1,36 @@
+.thread-textarea-box-content{
+	border: rgba(15,15,15,0.8) solid 2px;
+	width: 710px;
+	height: 240px;
+}
+.thread-bbcode-box{
+	background: rgba(35,35,35,0.5);
+	border: rgba(15,15,15,0.5) solid 1px;
+	width: 708px;
+	height: 38px;
+}
+.thread-bbcode-box-button, .thread-bbcode-box-button:hover{
+	background: rgba(35,35,35,0.5);
+	height: 30px;
+	border: rgba(15,15,15,0.8) solid 1px;
+	margin-top: 3px;
+	margin-left: 3px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 30px;
+	padding-left: 11px;
+	padding-right: 11px;
+}
+.thread-bbcode-box-button:hover{
+	border: #586F75 solid 1px;
+	background: rgba(65,65,65,1);
+}
+.thread-textarea{
+	background-color: rgba(35,35,35,0.5);
+	border: none;
+	width: 688px;
+	height: 180px;
+	resize: none;
+	color: #cfcfcf;
+	padding: 10px 10px 10px 10px;
+}

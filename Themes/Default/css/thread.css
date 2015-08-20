@@ -1,0 +1,371 @@
+/**
+* Synced Stylesheet File
+*
+* This file provides the style information
+* for the Forum Thread Module.
+*
+* @author Albea <https://bitbucket.org/Albea>
+* @license <https://synced-kronos.net/license>
+*
+* @version 0.1.0 (Synced)
+*/
+
+/*
+* BBCode
+*/
+blockquote{
+	background: rgba(0,0,0,0.5);
+	width: 486px;
+	height: 180px;
+	padding: 10px 10px 10px 10px;
+	overflow-y: scroll;
+	margin-left: 0;
+	border: rgba(65,65,65,1) 1px solid;
+}
+.code-box{
+	background: rgba(0,0,0,0.5);
+	width: 486px;
+	height: 180px;
+	border: rgba(65,65,65,1) 1px solid;
+	padding: 10px 10px 10px 10px;
+	overflow-y: scroll;
+}
+img{
+	max-width:100%;
+	max-height:100%;
+}
+
+
+/*
+* General
+*/
+.thread-main-box{
+	width: 718px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+	border-bottom: none;
+}
+.thread-box{
+	width: 718px;
+	overflow: hidden;
+}
+.forum-link-handler{
+	width: 718px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+	margin-bottom: 5px;
+}
+.forum-link-handler-left{
+	width: 683px;
+	height: 25px;
+}
+.forum-link-handler-right{
+	width: 30px;
+	height: 25px;
+	text-align: center;
+}
+.trashcan{
+	margin-top: 5px;
+}
+/*
+* User Box
+*/
+.thread-user-box{
+	width: 180px;
+}
+.thread-user-box-name{
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	text-align: center;
+}
+.thread-user-pic-box{
+	width: 180px;
+	height: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.thread-user-pic{
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 98px;
+	height: 98px;
+}
+.thread-user-bottom{
+	width: 180px;
+}
+.thread-user-bottom-row{
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 15px;
+}
+.thread-user-bottom-row-left{
+	width: 50px;
+	height: 20px;
+}
+.thread-user-bottom-row-right{
+	width: 130px;
+	height: 20px;
+}
+
+/*
+* Text Box
+*/
+.thread-text-box{
+	width: 516.5px;
+}
+.thread-text-box-title{
+	width: 516.5px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 15px;
+}
+.thread-text-box-title-left{
+	width: 461.5px;
+	height: 25px;
+}
+.thread-text-box-title-right, .thread-text-box-title-center{
+	width: 30px;
+	height: 25px;
+	text-align: center;
+}
+.thread-text-box-title-center{
+	width: 20px;
+}
+.thread-text-box-text{
+	width: 506.5px;
+	min-height: 250px;
+	font-size: 13px;
+	line-height: 20px;
+}
+.thread-text-box-bottom{
+	width: 516.5px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+}
+.thread-text-box-bottom-left{
+	width: 479.5px;
+	height: 20px;
+}
+.thread-text-box-bottom-right{
+	width: 32px;
+	height: 20px;
+	text-align: center;
+}
+
+/*
+* Application only
+*/
+.app-state{
+	width: 180px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-align: center;
+}
+.app-state-top, .app-state-top:hover{
+	width: 85.5px;
+}
+.app-state-bottom, .app-state-bottom:hover{
+	width: 180px;
+}
+
+/*
+* Bottom Page Controler + New Post
+*/
+.section-action-row, .section-action-row-left, .section-action-row-right{
+	height: 45px;
+}
+.section-action-row{
+	width: 718px;
+	padding-top: 4px;
+}
+.section-action-row-left{
+	width: 398px;
+}
+.section-action-row-right{
+	width: 310px;
+}
+.page-handler{
+	width: 264px;
+	height: 30px;
+	margin-top: 7.5px;
+	float: right;
+	box-shadow: 0.25px 0.25px 1.25px 0.5px #000;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+}
+.page-handler-index{
+	width: 100px;
+	border-right: 1px solid rgb(65,65,65);
+	height: 30px;
+}
+.page-handler-first{
+	width: 50px;
+	height: 30px;
+	border-right: 1px solid rgb(65,65,65);
+}
+.page-handler-last{
+	width: 49.5px;
+	height: 30px;
+}
+.page-handler-next, .page-handler-before, .page-handler-next:hover, .page-handler-before:hover{
+	background: no-repeat center url('../../../forum/section/img/tab_left.png');
+	width: 30px;
+	height: 30px;
+	border-right: 1px solid rgb(65,65,65);
+}
+.page-handler-next{
+	background: no-repeat center url('../../../forum/section/img/tab_right.png');
+}
+.page-handler-before:hover{
+	background: no-repeat center url('../../../forum/section/img/tab_left_hover.png');
+}
+.page-handler-next:hover{
+	background: no-repeat center url('../../../forum/section/img/tab_right_hover.png');
+}
+.thread-textarea-box{
+	width: 718px;
+	min-height: 240px;
+	padding-top: 5px;
+}
+.thread-textarea-box-adv-title{
+	width: 718px;
+	height: 35px;
+	line-height: 35px;
+}
+.thread-adv-title{
+	width: 713px;
+}
+.thread-textarea-box-button{
+	width: 718px;
+	height: 50px;
+}
+.thread-textarea-box-sep{
+	width: 359px;
+	height: 35px;
+	padding-top: 15px;
+	text-align: center;
+}
+.thread-button, .thread-button:hover{
+	background-color: rgba(35,35,35,0.8);
+	text-transform: uppercase;
+	width: 200px;
+	font-size: 14px;
+}
+
+/*
+* Poll System
+*/
+.poll-container{
+	width: 708px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+	margin-bottom: 5px;
+}
+.poll-row{
+	width: 706px;
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 8px;
+	text-align: left;
+}
+.poll-row-arg, .poll-row-progress, .poll-row-progress-value{
+	width: 676px;
+	height: 25px;
+}
+.poll-row-progress{
+	box-shadow: 0.5px 0.5px 2px 0.5px #000;
+}
+.poll-row-selector{
+	width: 30px; 
+	height: 25px;
+}
+.poll-row-progress, .poll-row-progress-value{
+	position: absolute;
+	font-size: 14px;
+}
+.poll-row-progress-arg{
+	width: 591px;
+	height: 25px;
+	text-align: left;
+}
+.poll-row-progress-eval{
+	width: 80px;
+	height: 25px;
+	text-align: center;
+}
+.poll-submit-button{
+	width: 150px;
+}
+
+/*
+* Checkbox
+* @link <http://cssdeck.com/labs/css-checkbox-styles>
+*/
+.squared-1, .squared-2,.squared-3, .squared-4, .squared-5, .squared-6 {
+	width: 25px;
+	position: absolute;
+	padding-left: 5px;
+}
+
+.squared-1 label, .squared-2 label, .squared-3 label, .squared-4 label, .squared-5 label,.squared-6 label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin-top: 2.5px;
+	margin-left: 10px;
+	top: 0;
+	left: -2px;
+	border-radius: 4px;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+
+	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+	background: linear-gradient(top, #222 0%, #45484d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+.squared-1 label:after, .squared-2 label:after, .squared-3 label:after, .squared-4 label:after, .squared-5 label:after, .squared-6 label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squared-1 label:hover::after, .squared-2 label:hover::after, .squared-3 label:hover::after, .squared-4 label:hover::after, .squared-5 label:hover::after, .squared-6 label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.squared-1 input[type=checkbox]:checked + label:after, .squared-2 input[type=checkbox]:checked + label:after, .squared-3 input[type=checkbox]:checked + label:after, .squared-4 input[type=checkbox]:checked + label:after, .squared-5 input[type=checkbox]:checked + label:after, .squared-6 input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}

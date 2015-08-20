@@ -1,0 +1,39 @@
+/**
+* Synced Stylesheet File
+*
+* This file provides the style information
+* for the Home Module.
+*
+* @author Albea <https://bitbucket.org/Albea>
+* @license <https://synced-kronos.net/license>
+*
+* @version 0.1.0 (Synced)
+*/
+
+.news-container{
+	width: 718px;
+	box-shadow: 0.5px 0.5px 2.5px 1px #000;
+}
+.news-container-title{
+	background-image: url('../img/home/wireless.png');
+	background-position: 8px center;
+	background-repeat: no-repeat;
+	width: 681px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 37px;
+	font-size: 20px;
+}
+.news-container-content{
+	width: 698px;
+}
+.news-end-box{
+	width: 693px;
+	height: 40px;
+	line-height: 20px;
+	box-shadow: 0.5px 0.5px 1.25px 0.5px #000;
+}
+img{
+	max-width:100%;
+	max-height:100%;
+}

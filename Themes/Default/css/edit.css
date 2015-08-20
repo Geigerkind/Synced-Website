@@ -1,0 +1,38 @@
+/**
+* Synced Stylesheet File
+*
+* This file provides the style information
+* for the edit form.
+*
+* @author Albea <https://bitbucket.org/Albea>
+* @license <https://synced-kronos.net/license>
+*
+* @version 0.1.0 (Synced)
+*/
+
+.edit-box{
+	width: 708px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+}
+.edit-top{
+	width: 708px;
+	height: 60px;
+	font-size: 14px;
+}
+.edit-title{
+	width: 701px;
+}
+.edit-center{
+	width: 708px;
+	height: 250px;
+	padding-top: 5px;
+	padding-bototm: 5px;
+}
+.edit-bottom{
+	width: 698px;
+	text-align: center;
+}
+.edit-submit{
+	text-transform: uppercase;
+	width: 120px;
+}

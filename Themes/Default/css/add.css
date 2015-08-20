@@ -1,0 +1,25 @@
+.addi-container{
+	height: 152px;
+	width: 717px;
+}
+.addi-row{
+	height: 50px;
+	width: 717px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 18px;
+}
+.addi-row #submit {
+	width: 120px;
+}
+.addi-row-coloumn-left{
+	height: 50px;
+	width: 216px;
+}
+.addi-row-coloumn-right{
+	height: 50px;
+	width: 500px;
+}
+.addi-row-coloumn-right input {
+	width: 480px;
+}

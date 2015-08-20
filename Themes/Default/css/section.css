@@ -1,0 +1,168 @@
+/**
+* Synced Stylesheet File
+*
+* This file provides the style information
+* for the Forum Section Module.
+*
+* @author Albea <https://bitbucket.org/Albea>
+* @license <https://synced-kronos.net/license>
+*
+* @version 0.1.0 (Synced)
+*/
+
+/*
+* Common Attributes
+*/
+.forum-title-row-left, .forum-title-row-center, .forum-title-row-right, .forum-link-handler{
+	height: 25px;
+}
+.forum-row-left, .forum-row-center, .forum-row-right, .forum-row-left-info{
+	height: 60px;
+}
+.forum-row-center-row-section, .forum-row-center-row-left, .forum-row-center-row-right{
+	height: 20px;
+}
+.forum-title-row-left, .section-action-row-left{
+	width: 403px;
+}
+.forum-title-row-center, .forum-title-row-right, .forum-row-center, .forum-row-right, .forum-row-center-row-section{
+	width: 155px;
+}
+
+/*
+* Link Handler
+*/
+.forum-link-handler{
+	width: 713px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	box-shadow: 0.5px 0.5px 1.5px 1px #000;
+}
+
+/*
+* Title Row
+*/
+.forum-title-row{
+	width: 718px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-top: 7px;
+	box-shadow: 0.5px 0.5px 1.5px 1px #000;
+	border-bottom: none;
+}
+
+/*
+* Section Row
+*/
+.forum-row{
+	width: 718px;
+	height: 60px;
+	box-shadow: 0.5px 0.5px 1.5px 1px #000;
+}
+.forum-row-left{
+	width: 408px;
+}
+.forum-row-right-row{
+	width: 155px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+}
+.forum-row-left-pic-handler{
+	width: 50px;
+	height: 50px;
+}
+.forum-row-left-pic-handler-pic{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+}
+.forum-row-left-info, .forum-row-left-info-title{
+	width: 343px;
+}
+.forum-row-left-info-title{
+	height: 20px;
+	line-height: 25px;
+	font-size: 14px;
+}
+.forum-row-left-info-content{
+	width: 303px;
+	height: 30px;
+	line-height: 17px;
+	padding-right: 40px;
+}
+.forum-row-center-row-left{
+	width: 60px;
+	text-align: right;
+	padding-right: 5px;
+}
+.forum-row-center-row-right{
+	width: 90px;
+}
+.forum-row-center-row-section{
+	font-size: 14px;
+}
+/*
+* Bottom Page Controler + New Post
+*/
+.section-action-row, .section-action-row-left, .section-action-row-right{
+	height: 45px;
+}
+.section-action-row{
+	width: 718px;
+	padding-top: 10px;
+}
+.section-action-row-right{
+	width: 310px;
+}
+.action-row-button, .action-row-button:hover{
+	text-transform: uppercase;
+	width: 240px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+}
+.page-handler{
+	width: 264px;
+	height: 30px;
+	margin-top: 7.5px;
+	float: right;
+	box-shadow: 0.25px 0.25px 1.25px 0.5px #000;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+}
+.page-handler-index{
+	width: 100px;
+	border-right: 1px solid rgb(65,65,65);
+	height: 30px;
+}
+.page-handler-first{
+	width: 50px;
+	height: 30px;
+	border-right: 1px solid rgb(65,65,65);
+}
+.page-handler-last{
+	width: 49.5px;
+	height: 30px;
+}
+.page-handler-next, .page-handler-before, .page-handler-next:hover, .page-handler-before:hover{
+	background: no-repeat center url('../../../forum/section/img/tab_left.png');
+	width: 30px;
+	height: 30px;
+	border-right: 1px solid rgb(65,65,65);
+}
+.page-handler-next{
+	background: no-repeat center url('../../../forum/section/img/tab_right.png');
+}
+.page-handler-before:hover{
+	background: no-repeat center url('../../../forum/section/img/tab_left_hover.png');
+}
+.page-handler-next:hover{
+	background: no-repeat center url('../../../forum/section/img/tab_right_hover.png');
+}

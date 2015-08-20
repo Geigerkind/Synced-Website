@@ -1,0 +1,134 @@
+.show-box{
+	width: 698px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+}
+.show-box-media{
+	width: 698px;
+	height: 390px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.show-box-media-arrow{
+	width: 50px;
+	height: 390px;
+}
+.arrow{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px; 
+	height: 50px;
+	margin-top: 170px;
+}
+.show-box-media-media{
+	width: 595.5px;
+	height: 390px;
+}
+.show-box-descr{
+	width: 698px;
+	min-height: 50px; 
+}
+.show-descr-title{
+	width: 688px;
+	color: #b9b099;
+    font-size: 18px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 10px;
+}
+.show-descr-subtitle{
+	width: 698px;
+	height: 25px;
+}
+.show-descr-subtitle-left{
+	width: 597.5px;
+	height: 25px;
+}
+.show-descr-subtitle-right{
+	width: 100px;
+	height: 25px;
+}
+.show-descr-subtitle-right a{
+	cursor: pointer;
+}
+.show-descr{
+	width: 698px;
+	min-height: 20px;
+}
+.show-box-comments, .show-box-comments-content{
+	width: 698px;
+}
+.show-box-comments-title{
+	background: no-repeat left center url('../../../media/show/img/gossip_media_new.png');
+	background-size: 50px 50px;
+	width: 638px;
+	height: 50px;
+	padding-left: 60px;
+	line-height: 50px;
+	font-size: 24px;
+}
+.show-comments-item{
+	width: 676px;
+	height: 100px;
+	border: 1px solid rgb(88, 111, 117);
+    box-shadow: 0.25px 0.25px 0.5px 0.25px #000;
+	margin-bottom: 5px;
+}
+.show-comments-item-pic{
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 97.5px;
+	height: 98px;
+}
+.show-comments-item-title{
+	width: 566px;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 10px;
+	font-size: 18px;
+}
+.show-comments-item-content{
+	width: 566px;
+	margin-left: 10px;
+	font-size: 14px;
+}
+.show-box-form{
+	width: 698px;
+	height: 250px;
+	text-align: center;
+}
+.show-box-form #comment-submit{
+	width: 140px;
+	height: 25px;
+	margin-top: 17.5px;
+}
+.media-bbcode-box{
+	width: 695px;
+}
+.media-textarea{
+	width: 675px;
+}
+.show-descr-edit{
+	width: 678px;
+	height: 100px;
+}
+.show-edit-row{
+	width: 678px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 18px;
+}
+.show-edit-row-title{
+	width: 120px;
+	height: 35px;
+}
+.show-edit-row-content{
+	width: 558px;
+	height: 35px;
+}
+.show-edit-row-content input[type=text]{
+	width: 550px;
+}
+#edit-submit{
+	width: 140px;
+	height: 25px;
+}

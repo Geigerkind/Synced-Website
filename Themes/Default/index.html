@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Synced - International Raiding Guild</title>
+		
+		<!-- Meta Tags -->
+		<meta charset="UTF-8" />
+		<meta name="description" content="International World of Warcraft 1.12 Raiding Guild on the private server Kronos-WoW" />
+		<meta name="keywords" content="Synced, Vanilla, 1.12, Kronos-WoW, Kronos, WoW, World of Warcraft" />
+		<meta name="author" content="Albea (Shino/Geigerkind)" />
+		
+		<!-- Stylesheet -->
+		<link rel="stylesheet" type="text/css" href="{path}Themes/Default/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="{path}Themes/Default/css/util.css" />
+		<link rel="stylesheet" type="text/css" href="{path}Themes/Default/css/sideBar.css" />
+		<link rel="stylesheet" type="text/css" href="{path}External/lightbox/css/lightbox.css" />
+		<link rel="stylesheet" type="text/css" href="{path}External/Scrollbar/jquery.mCustomScrollbar.css" />
+		<link rel="stylesheet" type="text/css" href="{path}Themes/Default/css/textarea.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="{path}External/SCEditor/themes/default.min.css" /> -->
+		
+		<!-- Icons -->
+		<link rel="shortcut icon" type="image/x-icon" href="{path}Themes/Default/img/icon.ico" />
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="{path}External/JQuery/jquery.js"></script> 
+		<script type="text/javascript" src="{path}External/JQuery/jquery-ui.js"></script>
+		<script type="text/javascript" src="{path}External/JQuery/jquery-selection/src/jquery.selection.js"></script>
+		<script type="text/javascript" src="{path}External/lightbox/js/lightbox.js" defer></script> 
+		<script type="text/javascript" src="{path}External/WoW-Head-Tooltips/wowhead-db.js" defer></script>
+		<script type="text/javascript" src="{path}External/Google/google-analytics.js" defer></script>
+		<script type="text/javascript" src="{path}External/Scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+		<!-- <script type="text/javascript" src="{path}External/SCEditor/jquery.sceditor.bbcode.min.js"></script> -->
+		<script type="text/javascript" src="{path}Themes/Default/js/initialize-scrollbar.js"></script>
+		<script type="text/javascript" src="{path}Themes/Default/js/utilJs.js"></script>
+		<script type="text/javascript" src="{path}Themes/Default/js/textarea.js"></script>
+		
+		<!-- Added -->
+		
+	</head>
+	<body class="bg-wrapper no-padding no-margin">
+		<div class="container centred-margin min-height">
+			<div class="head">
+				<div id="navbar" class="navbar border-glow box-color">
+					<ul class="no-padding no-margin">
+						<li><a id="navbar-home" href="{host}/">Home</a></li>
+						<li><a id="navbar-forum" href="{host}/forum/">Forum</a></li>
+						<li><a id="navbar-loot-system" href="{host}/loot-system/">Loot-System</a></li>
+						<li><a id="navbar-apply-account" href="{host}/apply/">Apply</a></li>
+						<li><a id="navbar-roster" href="{host}/roster/">Roster</a></li>
+						<li><a id="navbar-faq" href="{host}/faq/">Faq</a></li>
+						<li><a id="navbar-calendar" href="{host}/calendar/?date={date}">Calendar</a></li>
+						<li><a id="navbar-media" href="{host}/media/">Media</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="content" class="min-height width-max">
+				<div id="sidebar-left" class="sidebar float-left min-height padding-5">
+					<!-- User Menu -->
+					<div id="sideBar-user-menu" class="sideBar-module-container border-glow min-height box-color">
+						<div class="sideBar-module-container-title box-color-no-opa text-bordered">User Menu</div>
+						<div class="sideBar-module-container-content min-height padding-5">
+							<div id="user-menu" class="user-menu padding-5">
+								<form action="{path}Helper/User/LogIn.php" method="post">
+									<label>Username:</label>
+									<input type="text" class="box-color input-text border border-radius" name="name" onblur="(this.value == '') && (this.value = 'Name...')" onfocus="(this.value == 'Name...') && (this.value = '')" />
+									<label>Password:</label>
+									<input type="password" class="box-color input-text border border-radius" name="pass" onblur="(this.value == '') && (this.value = 'Password...')" onfocus="(this.value == 'Password...') && (this.value = '')" />
+									<input type="hidden" name="hidden-values" value="{location}" />
+									<input type="submit" class="input-submit box-color border border-radius" value="Login" />
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Latest Posts -->
+					<div id="sideBar-latest-posts" class="sideBar-module-container border-glow min-height box-color">
+						<div class="sideBar-module-container-title box-color-no-opa text-bordered">Latest Posts</div>
+						<div id="latest-posts" class="sideBar-module-container-content padding-5 latest-posts scrollbar">
+							
+						</div>
+					</div>
+					
+					<!-- Raid Progress -->
+					<div id="sideBar-raid-progress" class="sideBar-module-container border-glow min-height box-color">
+						<div class="sideBar-module-container-title box-color-no-opa text-bordered">Raid Progress</div>
+						<div id="raid-progress" class="sideBar-module-container-content min-height padding-5">
+						</div>
+					</div>
+					
+				</div>
+				<div id="content-container" class="bar-center float-left min-height padding-5">
+					<div class="bar-center-main border-glow min-height centred-margin box-color">
+						<div id="content-container-title" class="bar-center-main-title box-color-no-opa text-bordered">- Home</div>
+						<div id="bar-content" class="bar-center-main-content min-height padding-5">
+						</div>
+					</div>
+				</div>
+				<div id="sidebar-right" class="sidebar float-left min-height padding-5">
+					<!-- Useful Links -->
+					<div id="sideBar-useful-links" class="sideBar-module-container border-glow min-height box-color">
+						<div class="sideBar-module-container-title box-color-no-opa text-bordered">Useful Links</div>
+						<div class="sideBar-module-container-content min-height padding-5">
+							<div id="ts3" class="useful-links-row border-bottom"><a href="ts3server://46.105.147.204?port=9988">Teamspeak3-Server</a></div>
+							<div id="talentcalculator" class="useful-links-row border-bottom"><a href="http://realmplayers.com/Talents.aspx#L" target="_blank">Talentcalculator</a></div>
+							<div id="rpcal" class="useful-links-row border-bottom"><a href="{path}RPCalculator">Rankpointscalculator</a></div>
+							<div id="kronos-hp" class="useful-links-row border-bottom"><a href="http://www.kronos-wow.com/" target="_blank">Kronos Website</a></div>
+							<div id="twinstar-forum" class="useful-links-row border-bottom"><a href="http://forum.twinstar.cz/forum.php" target="_blank">Twinstar Forum</a></div>
+							<div id="twinhead" class="useful-links-row"><a href="https://vanilla-twinhead.twinstar.cz/" target="_blank">Twinhead</a></div>
+						</div>
+					</div>
+					
+					<!-- New Events -->
+					<div id="new-events">
+						
+					</div>
+					
+					<!-- Looking For Member -->
+					<div id="sideBar-lfm">
+					
+					</div>
+					
+					<!-- Shoutbox -->
+					<div id="sideBar-shoutbox" class="sideBar-module-container border-glow min-height box-color">
+						<div class="sideBar-module-container-title box-color-no-opa text-bordered">Shoutbox</div>
+						<div id="sideBar-shoutbox-content" class="sideBar-module-container-content min-height padding-5">
+							<div id="shoutbox" class="shoutbox-content scrollbar">
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div id="footer" class="footer min-height text-center float-left">Coded and Designed by Geigerkind(Shino). WoW Graphics and Wallpaper belong to Blizzard Entertainment.</div>
+		</div>
+	</body>
+</html>

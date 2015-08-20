@@ -1,0 +1,110 @@
+/**
+* Synced Stylesheet File
+*
+* This file provides the style information
+* for the Forum Module.
+*
+* @author Albea <https://bitbucket.org/Albea>
+* @license <https://synced-kronos.net/license>
+*
+* @version 0.1.0 (Synced)
+*/
+
+/*
+* Common Attributes
+*/
+.forum-title-row-left, .forum-title-row-center, .forum-title-row-right, .forum-link-handler{
+	height: 25px;
+}
+.forum-row-left, .forum-row-center, .forum-row-right, .forum-row-left-info{
+	height: 60px;
+}
+.forum-row-center-row, .forum-row-center-row-left, .forum-row-center-row-right{
+	height: 30px;
+}
+.forum-title-row-left{
+	width: 403px;
+}
+.forum-title-row-center, .forum-title-row-right, .forum-row-center, .forum-row-right, .forum-row-center-row{
+	width: 155px;
+}
+
+/*
+* Link Handler
+*/
+.forum-link-handler{
+	width: 713px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	box-shadow: 0.5px 0.5px 1.5px 1px #000;
+}
+
+/*
+* Title Row
+*/
+.forum-title-row{
+	width: 718px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-top: 7px;
+	box-shadow: 0.5px 0.5px 1.5px 1px #000;
+	border-bottom: none;
+}
+
+/*
+* Section Row
+*/
+.forum-row{
+	width: 718px;
+	height: 60px;
+	box-shadow: 0.5px 0.5px 1.5px 1px #000;
+}
+.forum-row-left{
+	width: 408px;
+}
+.forum-row-right-row{
+	width: 155px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+}
+.forum-row-left-pic-handler{
+	width: 50px;
+	height: 50px;
+}
+.forum-row-left-pic-handler-pic{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+}
+.forum-row-left-info, .forum-row-left-info-title{
+	width: 343px;
+}
+.forum-row-left-info-title{
+	height: 20px;
+	line-height: 25px;
+	font-size: 14px;
+}
+.forum-row-left-info-content{
+	width: 303px;
+	height: 30px;
+	line-height: 17px;
+	padding-right: 40px;
+}
+.forum-row-center-row{
+	line-height: 30px;
+	font-size: 14px;
+}
+.forum-row-center-row-left{
+	width: 60px;
+	text-align: right;
+	padding-right: 5px;
+}
+.forum-row-center-row-right{
+	width: 90px;
+}

@@ -1,0 +1,30 @@
+.rpcal-box{
+	width: 708px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+}
+.rpcal-littlebox{
+	width: 500px;
+	margin: 50px auto;
+	height: 148px;
+}
+.rpcal-row{
+	width: 500px;
+	height: 49px;
+	line-height: 49px;
+}
+.rpcal-left{
+	width: 199px;
+	height: 49px;
+	font-size: 17px;
+}
+.rpcal-right{
+	width: 290px;
+	height: 49px;
+	padding-left: 10px;
+}
+.rpcal-right input[type=text]{
+	width: 280px;
+}
+.rpcal-row input[type=submit]{
+	width: 150px;
+}

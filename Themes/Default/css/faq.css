@@ -1,0 +1,46 @@
+.faq-box{
+	width: 698px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+	padding-bottom: 0px;
+}
+.faq-title-row{
+	width: 698px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	color: rgb(199, 156, 110);
+}
+.faq-rule-container{
+	width: 686px;
+	border-top: none;
+	margin-bottom: 10px; 
+}
+.faq-rule-row{
+	width: 686px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	cursor: pointer;
+}
+.faq-rule-row-count, .faq-rule-row-name, .faq-rule-row-toggle{
+	height: 30px;
+}
+.faq-rule-row-count, .faq-rule-row-toggle{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	text-align: center;
+	color: rgb(199, 156, 110);
+}
+.faq-rule-row-name{
+	width: 626px;
+}
+.faq-rule-row-toggle{
+	background-image: url('../../../faq/img/toggle.png');
+}
+.faq-rule-box{
+	width: 674px;
+	border-top: none;
+	margin-bottom: 10px;
+	font-size: 14px;
+}

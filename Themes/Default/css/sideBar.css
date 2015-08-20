@@ -1,0 +1,323 @@
+/**
+* Synced Stylesheet File
+*
+* This file provides the style information
+* for the SideBarModule.
+*
+* @author Albea <https://bitbucket.org/Albea>
+* @license <https://synced-kronos.net/license>
+*
+* @version 0.1.0 (Synced)
+*/
+
+/*
+* LogIn Menu
+*/
+.user-menu{
+	width: 188px;
+}
+.user-menu label{
+	width: 188px;
+	font-size: 14px;
+}
+.user-menu input[type=text], .user-menu input[type=password]{
+	width: 178px;
+	margin-bottom: 10px;
+}
+.user-menu input[type=submit]{
+	width: 100px;
+	margin-left: 43px;
+}
+.user-menu-label{
+	width: 188px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 18px;
+}
+.user-menu-pic-box{
+	width: 188px;
+	height: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.user-menu-pic{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 98px;
+	height: 98px;
+}
+.user-menu-info{
+	width: 188px;
+	height: 60px;
+	padding-bottom: 10px;
+}
+.user-menu-info-row{
+	width: 188px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+}
+.user-menu-info-row-title{
+	width: 45px;
+	height: 20px;
+}
+.user-menu-info-row-content{
+	width: 143px;
+	height: 20px;
+}
+
+/*
+* Latest Posts
+*/
+.latest-posts{
+	height: 300px;
+	overflow-y: hidden;
+}
+.latest-posts-row{
+	width: 198px;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.latest-posts-row-title{
+	width: 198px;
+	height: 20px;
+	line-height: 20px;
+}
+.latest-posts-row-content{
+	width: 178px;
+	line-height: 15px;
+	padding-right: 20px;
+}
+
+/*
+* Raid Progress
+*/
+.progress-box{
+	width: 196px;
+	height: 68px;
+	box-shadow: 0.5px 0.5px 2.5px 1px #000;
+}
+.progress-box-title{
+	width: 196px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-weight: 900;
+}
+.progress-box-progressbar{
+	width: 176px;
+	height: 22px;
+	text-align: center;
+	line-height: 22px;
+}
+.progress{
+	background-color: rgba(240, 169, 5, 0.6);
+	height: 23px;
+	border-right: 1px solid rgb(65,65,65);
+	margin-top: -1px;
+	position: absolute;
+}
+.progress-text{
+	width: 176px;
+	height: 21px;
+	line-height: 21px;
+	position: absolute;
+	text-align: center;
+	font-weight: 900;
+	font-size: 16px;
+}
+#progress-box-wb{
+	background: no-repeat url('../img/raidProgress/wb_progress.png');
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#progress-box-mc{
+	background: no-repeat url('../img/raidProgress/mc_progress.png');
+}
+#progress-box-ony{
+	background: no-repeat url('../img/raidProgress/ony_progress.png');
+}
+#progress-box-bwl{
+	background: no-repeat url('../img/raidProgress/bwl_progress.png');
+}
+#progress-box-zg{
+	background: no-repeat url('../img/raidProgress/zg_progress.png');
+}
+#progress-box-aq20{
+	background: no-repeat url('../img/raidProgress/aq20_progress.png');
+}
+#progress-box-aq40{
+	background: no-repeat url('../img/raidProgress/aq40_progress.png');
+}
+#progress-box-naxx{
+	background: no-repeat url('../img/raidProgress/naxx_progress.png');
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/*
+* Useful Links
+*/
+.useful-links-row{
+	width: 178px;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 20px;
+}
+#ts3{
+	background: no-repeat left center url('../img/usefulLinks/ts.png');
+}
+#talentcalculator{
+	background: no-repeat left center url('../img/usefulLinks/tc.jpg');
+}
+#rpcal{
+	background: no-repeat left center url('../img/usefulLinks/rpcal.png');
+}
+#kronos-hp{
+	background: no-repeat left center url('../img/usefulLinks/kronos.png');
+}
+#twinstar-forum, #twinhead{
+	background: no-repeat left center url('../img/usefulLinks/tws.png');
+}
+
+/*
+* Looking For Member
+*/
+.prio-Low{
+	color: rgb(171, 212, 115);
+}
+.prio-Medium{
+	color: rgb(255, 245, 105);
+}
+.prio-High{
+	color: rgb(220, 13, 31);
+}
+.lfm-apply-button{
+	margin: 0px auto;
+	margin-top: 5px;
+}
+.lfm-row{
+	width: 198px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+}
+.lfm-row-content{
+	width: 103px;
+	height: 30px;
+	margin-left: 5px;
+	padding-left: 25px;
+}
+.lfm-row-prio{
+	width: 60px;
+}
+#lfm-warrior{
+	background: no-repeat left center url('../img/classes/Warrior.png');
+}
+#lfm-rogue{
+	background: no-repeat left center url('../img/classes/Rogue.png');
+}
+#lfm-priest{
+	background: no-repeat left center url('../img/classes/Priest.png');
+}
+#lfm-hunter{
+	background: no-repeat left center url('../img/classes/Hunter.png');
+}
+#lfm-druid{
+	background: no-repeat left center url('../img/classes/Druid.png');
+}
+#lfm-mage{
+	background: no-repeat left center url('../img/classes/Mage.png');
+}
+#lfm-warlock{
+	background: no-repeat left center url('../img/classes/Warlock.png');
+}
+#lfm-paladin{
+	background: no-repeat left center url('../img/classes/Paladin.png');
+}
+
+/*
+* Shoutbox
+*/
+.shoutbox-content{
+	height: 300px;
+	overflow-y: hidden;
+}
+.shoutbox-row{
+	width: 198px;
+	border-bottom: none;
+}
+.shoutbox-row-title{
+	width: 193px;
+	height: 18px;
+	line-height: 20px;
+	font-size: 11px;
+	padding-left: 5px;
+}
+.shoutbox-row-content{
+	width: 188px;
+	line-height: 15px;
+	padding-right: 10px;
+}
+.shoutbox-form{
+	width: 198px;
+	height: 25px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+.shoutbox-text{
+	width: 121px;
+}
+.shoutbox-submit{
+	width: 60px;
+	margin-left: 5px;
+}
+
+/*
+* New Events
+*/
+.sideBar-newEvents-row{
+	background: rgba(35,35,35,0.5);
+	width: 206px;
+	min-height: 40px;
+	border-bottom: rgba(65,65,65,0.5) solid 1px;
+}
+.sideBar-newEvents-row-date{
+	width: 186px;
+	height: 15px;
+	line-height: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 15px;
+	color:#FFF569;
+	text-align: center;
+}
+.sideBar-newEvents-row-top{
+	width: 186px;
+	height: 40px;
+	padding: 10px 10px 10px 10px;
+}
+.newEvents-img{
+	background: rgb(35,35,35);
+	width: 38px;
+	height: 38px;
+	border: rgb(35,35,35) solid 1px;
+	background-repeat: no-repeat;
+	background-size: 38px 38px;
+}
+.newEvents-title{
+	width: 136px;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 10px;
+}
+.sideBar-newEvents-row-bottom{
+	background: rgba(35,35,35,0.5);
+	width: 176px;
+	min-height: 40px;
+	margin-left: 10px;
+	padding: 5px 5px 5px 5px;
+	border: rgb(35,35,35) solid 1px;
+	margin-bottom: 5px;
+}

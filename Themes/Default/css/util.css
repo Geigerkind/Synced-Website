@@ -1,0 +1,229 @@
+/*
+* Margin & Padding & Order
+*/
+.no-padding{
+	padding: 0 0 0 0;
+}
+.padding-5{
+	padding: 5px 5px 5px 5px;
+}
+.padding-10{
+	padding: 10px 10px 10px 10px;
+}
+.padding-left-5{
+	padding-left: 5px;
+}
+.no-margin{
+	margin: 0 0 0 0;
+}
+.margin-top-5{
+	margin-top: 5px;
+}
+.margin-top-10{
+	margin-top: 10px;
+}
+.margin-left-5{
+	margin-left: 5px;
+}
+.centred-margin{
+	margin: 0px auto;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+/*
+* Height & Width
+*/
+.min-height{
+	min-height: 10px;
+}
+.width-max{
+	width: 1200px;
+}
+/*
+* Color
+*/
+.color-normal{
+	color: #cfcfcf;
+}
+.red{
+	background-color: red;
+}
+.blue{
+	background-color: blue;
+}
+.green{
+	background-color: green;
+}
+.yellow{
+	background-color: purple;
+}
+.purple{
+	background-color: yellow;
+}
+.gray{
+	background-color: gray;
+}
+.sy-yellow{
+	color: rgb(184, 204, 0);
+}
+.sy-yellow:hover{
+	color: #fff;
+}
+.color-Inactive, .color-Trialist, .color-Member{
+	color: rgb(171, 212, 115);
+}
+.color-Veteran, .color-Classleader{
+	color: rgb(255, 245, 105);
+}
+.color-Officer, .color-GuildMaster{
+	color: rgb(220, 13, 31);
+}
+.color-warrior{
+	color: rgb(199, 156, 110);
+}
+.color-rogue{
+	color: rgb(255, 245, 105);
+}
+.color-priest{
+	color: rgb(255, 255, 255);
+}
+.color-hunter{
+	color: rgb(171, 212, 115);
+}
+.color-druid{
+	color: rgb(255, 125, 0);
+}
+.color-mage{
+	color: rgb(105, 204, 240);
+}
+.color-warlock{
+	color: rgb(148, 130, 201);
+}
+.color-paladin{
+	color: rgb(245, 140, 186);
+}
+.color-confirmed{
+	color: green;
+}
+.color-on-hold{
+	color: #ffd320;
+}
+.color-kicked, .color-declined{
+	color: rgb(220, 13, 31);
+}
+.color-unknown{
+	color: #cfcfcf;
+}
+/*
+* Text Alteration
+*/
+.text-center{
+	text-align: center;
+}
+.text-bold{
+	font-weight: 900;
+}
+.text-bordered{
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.crossed{
+	text-decoration: line-through;
+}
+.text-italic{
+	font-style: italic;
+}
+.text-underline{
+	text-decoration: underline;
+}
+/*
+* Border & Boxshadow
+*/
+.border-glow{
+	border: 1px solid rgb(88, 111, 117);
+	box-shadow: 0.3px 0.0001px 8px 0.3px rgb(88, 111, 117);
+}
+.no-border{
+	border: none;
+}
+.border-bottom{
+	border-bottom: 1px solid rgb(65,65,65);
+}
+.border-left{
+	border-left: 1px solid rgb(65,65,65);
+}
+.border-right{
+	border-right: 1px solid rgb(65,65,65);
+}
+.border-top{
+	border-top: 1px solid rgb(65,65,65);
+}
+.border{
+	border: 1px solid rgba(65, 65, 65, 1);
+}
+.border-radius{
+	border-radius: 5px;
+}
+.border-top-radius{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.border-bottom-radius{
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.img-shadow{
+	box-shadow: 0.5px 0.5px 2.5px 1px #000;
+}
+/*
+* Box Alteration
+*/
+.box-color{
+	background-color: rgba(35, 35, 35, 0.5);
+}
+.box-color-no-opa{
+	background-color: rgb(35, 35, 35);
+}
+.button, .button:hover{
+	cursor: pointer;
+    font-weight: 900;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 99px;
+	box-shadow: 0.25px 0.25px 1.25px 0.5px #000;
+}
+.button:hover{
+	color: rgb(184,204,0);
+	background-color: rgb(88, 111, 117);
+}
+.invisible{
+	display: none;
+}
+/*
+* Input
+*/
+.input-text, .input-dropdown{
+	border-color: rgb(65, 65, 65);
+    border-style: solid;
+    border-width: 1px;
+	height: 25px;
+	color: #cfcfcf;
+	padding-left: 5px;
+	box-shadow: 0.25px 0.25px 1.25px 0.5px #000;
+}
+.input-submit, .input-submit:hover{
+	border-color: rgb(65, 65, 65);
+    border-style: solid;
+    border-width: 1px;
+	color: #cfcfcf;
+	height: 29px;
+	cursor: pointer;
+	box-shadow: 0.25px 0.25px 1.25px 0.5px #000;
+}
+.input-submit:hover{
+	color: rgb(184, 204, 0);
+}

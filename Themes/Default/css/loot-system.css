@@ -1,0 +1,152 @@
+/*
+* Loot-System History-System
+*/
+.ls-overall-box{
+	width: 718px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+}
+.ls-overall-title{
+	width: 713px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+}
+.ls-overall-content{
+	width: 708px;
+}
+.ls-overall-class-seperator{
+	width: 708px;
+	height: 35px;
+	cursor: pointer;
+}
+.ls-overall-class-title{
+	background-repeat: no-repeat;
+	background-position: left center;
+	width: 643px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 18px;
+	padding-left: 30px;
+}
+.ls-overall-class-toggle{
+	background: center no-repeat url('../../../loot-system/img/ic_drawer.png');
+	width: 35px;
+	height: 35px;
+}
+.ls-overall-class-container{
+	width: 696px;
+	margin-bottom: 5px;
+	border-top: none;
+}
+.ls-overall-player-row{
+	width: 696px;
+	height: 30px;
+	text-align: center;
+	line-height: 31px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.ls-overall-player-column-name{
+	width: 203px;
+	height: 30px;
+	text-align: left;
+	padding-left: 3px;
+}
+.ls-overall-player-column-jd{
+	width: 160px;
+	height: 30px;
+}
+.ls-overall-player-column-ra{
+	width: 150px;
+	height: 30px;
+}
+.ls-overall-player-column-toggle{
+	background: no-repeat center url('../../../loot-system/img/ic_drawer_small.png');
+	width: 30px;
+	height: 30px;
+}
+.ls-overall-player-container{
+	width: 694px;
+	overflow: hidden;
+	border-top: none;
+}
+.ls-overall-player-container-item, .ls-overall-player-container-note{
+	width: 335.75px;
+}
+.ls-overall-player-container-item-title, .ls-overall-player-container-note-title{
+	width: 333.5px;
+	height: 24px;
+	line-height: 25px;
+	font-size: 13px;
+	padding-left: 3px;
+}
+.ls-overall-player-container-item-content, .ls-overall-player-container-note-content{
+	width: 328.5px;
+	height: 90px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.ls-overall-player-container-item-form, .ls-overall-player-container-note-form{
+	width: 338px;
+	height: 35px;
+	line-height: 42px;
+}
+.ls-overall-player-container-row{
+	width: 328.5px;
+	height: 19px;
+	line-height: 20px;
+}
+.ls-overall-player-container-row-item{
+	width: 295.5px;
+	height: 19px;
+	padding-left: 3px;
+}
+.ls-overall-player-container-row-delete{
+	width: 30px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+.ls-item-text, .ls-note-text{
+	width: 249.5px;
+}
+.ls-item-submit, .ls-note-submit{
+	width: 73.5px;
+	margin-left: 5px;
+}
+.ui-autocomplete {
+	background: rgb(35,35,35);
+	max-height: 200px; 
+	overflow-y: scroll; 
+	overflow-x: hidden; 
+	width: 150px;
+	list-style: none;
+	padding-left: 5px;
+	font-size: 16px;
+}
+.ui-menu-item:hover{
+	background: rgba(88, 111, 117, 0.5);
+	cursor: pointer;
+}
+.ui-helper-hidden-accessible{
+	display: none;
+}
+
+/*
+* Loot-System info box
+*/
+.ls-info-box{
+	width: 718px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+}
+.ls-info-title{
+	width: 713px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+}
+.ls-info-content{
+	width: 708px;
+	font-size: 13px;
+    line-height: 20px;
+}

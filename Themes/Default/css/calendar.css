@@ -1,0 +1,39 @@
+.calendar-box{
+	width: 708px;
+	box-shadow: 0.5px 0.5px 1.25px 1px #000;
+	background-color: rgba(35,35,35,0.7);
+}
+.row-days{
+	width: 708px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+}
+.row-days-column{
+	width: 100px;
+	height: 30px;
+}
+.row-ca-day{
+	width: 708px;
+	height: 90px;
+}
+.row-ca-day-column{
+	width: 90px;
+	height: 80px;
+}
+.row-ca-day-column-count{
+	width: 90px;
+	height: 20px;
+	line-height: 20px;
+	text-align: right;
+}
+.row-ca-day-column-title{
+	width: 90px;
+	max-height: 50px;
+	line-height: 16px;
+}
+.row-ca-day-column-time{
+	width: 90px;
+	height: 15px;
+}
