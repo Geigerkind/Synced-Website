@@ -95,7 +95,7 @@ class BSite extends Site{
 								<div class="forum-row-left-pic-handler-pic" style="background-image: url(\'{path}forum/img/'.$rowInfo->img.'.png\');"></div>
 							</div>
 							<div class="forum-row-left-info float-left">
-								<div class="forum-row-left-info-title text-bold"><a href="{host}/forum/section/thread/?tid='.$rowInfo->tid.'" class="sy-yellow">'.$app.$this->shortenString(40, $rowInfo->title).'</a></div>
+								<div class="forum-row-left-info-title text-bold"><a href="{host}/forum/section/thread/?tid='.$rowInfo->tid.'" class="sy-yellow">'.$app.$this->shortenString(35, $rowInfo->title).'</a></div>
 								<div class="forum-row-left-info-content">Started by <a href="#" class="color-'.strtolower($rowInfo->class).'">'.$rowInfo->name.'</a>, '.$rowInfo->date.'</div>
 							</div>
 						</div>
@@ -114,7 +114,7 @@ class BSite extends Site{
 							</div>
 						</div>
 						<div class="forum-row-right float-left">
-							<div class="forum-row-right-row"><a href="{host}/forum/section/thread/?tid='.$rowInfo->tid.'#comment-'.$rowLatest->cid.'" class="sy-yellow">'.$this->shortenString(18, $rowLatest->title).'</a></div>
+							<div class="forum-row-right-row"><a href="{host}/forum/section/thread/?tid='.$rowInfo->tid.'#comment-'.$rowLatest->cid.'" class="sy-yellow">'.$this->shortenString(15, $rowLatest->title).'</a></div>
 							<div class="forum-row-right-row">by <a href="#" class="color-'.strtolower($rowLatest->class).'">'.$rowLatest->name.'</a></div>
 							<div class="forum-row-right-row">'.$rowLatest->date.'</div>
 						</div>

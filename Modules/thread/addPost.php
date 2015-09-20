@@ -55,7 +55,7 @@ class AddPost{
 	private function post(){
 		if(!empty($this->text) AND !empty($this->title) AND $this->preventDoublePosting()){
 			$this->db->query('INSERT INTO forum_topics_comment (tid, uid, title, text, date) VALUES ('.$this->tid.', '.$this->uid.',"'.htmlentities($this->title, ENT_COMPAT, $charset).'", "'.$this->formatText($this->text).'", "'.$this->date.'")');
-			$this->db->query('INSERT INTO latest_posts (type, refid, permission) VALUES (0, "'.$this->db->query('SELECT cid FROM forum_topics_comment WHERE tid ="'.$this->tid.'" AND uid ='.$this->uid.' AND date ="'.$this->date.'" AND text ="'.$this->formatText($this->text).'"')->fetch()->cid.'",1)');
+			$this->db->query('INSERT INTO latest_posts (type, refid, permission) VALUES (0, "'.$this->db->query('SELECT cid FROM forum_topics_comment WHERE tid ="'.$this->tid.'" AND uid ='.$this->uid.' AND date ="'.$this->date.'" AND text ="'.$this->formatText($this->text).'"')->fetch()->cid.'", '.$this->db->query('SELECT permission FROM forum_topics c JOIN forum_section_topics a ON c.gtid = a.gtid JOIN forum_section b ON a.sid = b.sid WHERE c.tid ='.$this->tid)->fetch()->permission.')');
 		}
 		$this->getLocation();
 		exit();

@@ -213,6 +213,15 @@ class DefaultCodeDefinitionSet implements CodeDefinitionSet
 		$builder->setUseOption(true);
 		array_push($this->definitions, $builder->build());
 		
+		// New BBCode [item][/item]
+		$builder = new CodeDefinitionBuilder('spell', '<a href="https://vanilla-twinhead.twinstar.cz/?spell={param}" rel="spell={param}" target="_blank">{param}</a>');
+		array_push($this->definitions, $builder->build());
+		
+		// New BBCode [item][/item]
+		$builder = new CodeDefinitionBuilder('spell', '<a href="https://vanilla-twinhead.twinstar.cz/?spell={param}" rel="spell={option}" target="_blank">{param}</a>');
+		$builder->setUseOption(true);
+		array_push($this->definitions, $builder->build());
+		
 		// [emoticon]
 		$builder = new \JBBCode\CodeDefinitionBuilder('emoticon', '<img src="{path}External/SCEditor/emoticons/{param}.png" />');
         array_push($this->definitions, $builder->build());

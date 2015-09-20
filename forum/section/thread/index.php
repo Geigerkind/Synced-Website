@@ -12,7 +12,7 @@ class BSite extends Site{
 	}
 	
 	private function goHome($vp){
-		if(!$this->userAgent->isConfirmed() AND $vp != -1){
+		if((!$this->userAgent->isConfirmed() AND $vp != -1) or $vp > $this->userAgent->rank){
 			header('Location: ../../');
 			exit();
 		}
@@ -197,7 +197,7 @@ class BSite extends Site{
 					</div>
 					<div class="thread-text-box min-height float-left border-left">
 						<div class="thread-text-box-title border-bottom">
-							<div class="thread-text-box-title-left text-bold padding-left-5 float-left">'.$this->shortenString(50, $row->title).'</div>
+							<div class="thread-text-box-title-left text-bold padding-left-5 float-left">'.$this->shortenString(45, $row->title).'</div>
 							<div class="thread-text-box-title-center float-left">'.$trashComment.'</div>
 							<div class="thread-text-box-title-right float-left">#'.$i.'</div>
 						</div>

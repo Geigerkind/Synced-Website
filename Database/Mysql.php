@@ -31,10 +31,10 @@ class KeyData{
 			$this->pass = '';
 			$this->db = 'sneaky';
 		}else{
-			$this->host = '****';
-			$this->user = '****';
-			$this->pass = '****';
-			$this->db = '****';
+			$this->host = 'ni153316_2.vweb03.nitrado.net';
+			$this->user = 'ni153316_2sql1';
+			$this->pass = 'vanilla';
+			$this->db = 'ni153316_2sql1';
 		}
 	}
 }

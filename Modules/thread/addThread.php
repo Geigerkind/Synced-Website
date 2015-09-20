@@ -70,6 +70,7 @@ class AddThread{
 		if(!empty($this->text) AND !empty($this->title)){
 			if($this->preventDoublePost()){
 				$this->db->query('INSERT INTO forum_topics (gtid, uid, title, date, descr, poll) VALUES ('.$this->gtid.', '.$this->uid.', "'.htmlentities($this->title, ENT_COMPAT, $charset).'", "'.$this->date.'", "'.$this->formatText($this->text).'", '.$this->poll.')');
+				$gtid = $this->gtid;
 				$var = $this->db->query('SELECT tid FROM forum_topics WHERE gtid ='.$this->gtid.' AND uid = '.$this->uid.' AND date = "'.$this->date.'"')->fetch();
 				$this->tid = $var->tid;
 				$this->db->query('INSERT INTO forum_topics_comment (tid, uid, title, text, date) VALUES ('.$this->tid.', '.$this->uid.', "'.htmlentities($this->title, ENT_COMPAT, $charset).'", "'.$this->formatText($this->text).'", "'.$this->date.'")');
@@ -81,7 +82,7 @@ class AddThread{
 							$this->db->query('INSERT INTO forum_topics_poll_args (pollid, arg) VALUES ('.$pvar->pollid.', "'.$value.'")');
 					}
 				}
-				$this->db->query('INSERT INTO latest_posts (type, refid) VALUES (0, "'.$this->db->query('SELECT cid FROM forum_topics_comment WHERE tid ="'.$this->tid.'" AND uid ='.$this->uid.' AND date ="'.$this->date.'" AND text ="'.$this->formatText($this->text).'"')->fetch()->cid.'")');
+				$this->db->query('INSERT INTO latest_posts (type, refid, permission) VALUES (0, "'.$this->db->query('SELECT cid FROM forum_topics_comment WHERE tid ="'.$this->tid.'" AND uid ='.$this->uid.' AND date ="'.$this->date.'" AND text ="'.$this->formatText($this->text).'"')->fetch()->cid.'", '.$this->db->query('SELECT permission FROM forum_section_topics a JOIN forum_section b ON a.sid = b.sid WHERE a.gtid ='.$gtid)->fetch()->permission.')');
 				header('Location: ../../forum/section/thread/?tid='.$this->tid);
 				exit();
 			}else{
