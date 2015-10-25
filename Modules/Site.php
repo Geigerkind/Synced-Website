@@ -57,11 +57,12 @@ abstract class Site extends phpquery {
 	private function loadLatestPosts(){
 		foreach($this->db->query('SELECT * FROM latest_posts a WHERE permission <= '.$this->userAgent->rank.' ORDER BY a.id DESC LIMIT 20') as $row){
 			if ($row->type == 0){
-				$temp = $this->db->query('SELECT a.cid, b.name, c.title, a.date, a.uid, c.gtid, a.tid, f.class, (SELECT count(cid) FROM forum_topics_comment WHERE tid = a.tid) AS pages FROM forum_topics_comment a JOIN user b ON a.uid = b.uid JOIN forum_topics c ON a.tid = c.tid JOIN user_char f ON b.uid = f.uid WHERE f.mainChar = 1 AND a.cid = '.$row->refid)->fetch();
+				$temp = $this->db->query('SELECT a.cid, b.name, c.title, a.date, a.uid, c.gtid, a.tid, f.class FROM forum_topics_comment a JOIN user b ON a.uid = b.uid JOIN forum_topics c ON a.tid = c.tid JOIN user_char f ON b.uid = f.uid WHERE f.mainChar = 1 AND a.cid = '.$row->refid)->fetch();
+				$a = $this->db->query('SELECT cid FROM forum_topics_comment WHERE tid = "'.$temp->tid.'"')->rowCount();
 				if ($temp->cid != 0 and $temp->cid != null){
 					pq('#latest-posts')->append('
 									<div class="latest-posts-row min-height">
-										<div class="latest-posts-row-content min-height"><a href="{path}account/?uid='.$temp->uid.'" class="color-'.strtolower($temp->class).'">'.$temp->name.'</a> added a new post in <a href="{host}/forum/section/thread/?tid='.$temp->tid.'&page='.ceil($teamp->pages/10).'#comment-'.$temp->cid.'" class="sy-yellow">'.$temp->title.'</a></div>
+										<div class="latest-posts-row-content min-height"><a href="{path}account/?uid='.$temp->uid.'" class="color-'.strtolower($temp->class).'">'.$temp->name.'</a> added a new post in <a href="{host}/forum/section/thread/?tid='.$temp->tid.'&page='.ceil($a/10).'#comment-'.$temp->cid.'" class="sy-yellow">'.$temp->title.'</a></div>
 										<div class="latest-posts-row-title">'.$temp->date.'</div>
 									</div>
 					');
@@ -139,7 +140,7 @@ abstract class Site extends phpquery {
 								<div class="sideBar-module-container border-glow min-height box-color">
 									<div class="sideBar-module-container-title box-color-no-opa text-bordered">Upcoming events</div>
 			';						
-			foreach($this->db->query('SELECT * FROM calender_event WHERE timestamp <= '.(time()+60*60*24*7).' AND timestamp >='.(time()-60*60*24)) AS $row){
+			foreach($this->db->query('SELECT * FROM calender_event WHERE timestamp <= '.(time()+60*60*24*7).' AND timestamp >='.(time()-60*60*24).' ORDER BY timestamp') AS $row){
 				$content .= '
 									<div class="sideBar-newEvents-row">
 										<div class="sideBar-newEvents-row-date text-bold"><a href="{path}calendar/event/?date='.$row->date.'">'.$row->date.'</a></div>

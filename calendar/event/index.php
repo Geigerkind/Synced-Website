@@ -276,6 +276,8 @@ class BSite extends Site{
 				<div id="u-handler" class="user-handler invisible">
 					<div class="user-handler-row"><a href="" id="u-link1">Remove Player</a></div>
 					<div class="user-handler-row"><a href="" id="u-link2">Move to Not in Time</a></div>
+					<div class="user-handler-row"><a href="" id="u-link3">Move to Signed Out</a></div>
+					<div class="user-handler-row"><a href="" id="u-link4">Move to Signed In</a></div>
 				</div>
 			';
 		}

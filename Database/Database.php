@@ -80,7 +80,7 @@ class Database extends PDO {
 			$this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 		} catch (PDOException $e) {
 			//throw new DatabaseException('no_host');
-			die('No Host');
+			die('Maintenance - Will be up soon again!');
 		}
 	}
 	

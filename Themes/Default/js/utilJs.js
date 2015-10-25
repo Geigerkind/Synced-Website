@@ -172,9 +172,13 @@ function PopUserHandler(a,b,c){
 	var handler = document.getElementById('u-handler');
 	var link1 = document.getElementById('u-link1');
 	var link2 = document.getElementById('u-link2');
+	var link3 = document.getElementById('u-link3');
+	var link4 = document.getElementById('u-link4');
 	
 	link1.setAttribute('href', "../../Modules/calendar/removePlayer.php?uid="+a+"&eventid="+b+"&date="+c)
 	link2.setAttribute('href', "../../Modules/calendar/movePlayerToNIT.php?uid="+a+"&eventid="+b+"&date="+c)
+	link3.setAttribute('href', "../../Modules/calendar/movePlayerToSO.php?uid="+a+"&eventid="+b+"&date="+c)
+	link4.setAttribute('href', "../../Modules/calendar/movePlayerToSI.php?uid="+a+"&eventid="+b+"&date="+c)
 	
 	handler.style.top = posY-40+"px";
 	handler.style.left = posX+30+"px";

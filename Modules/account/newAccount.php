@@ -90,6 +90,7 @@ class NewAccount{
 			$this->db->query('INSERT INTO forum_topics_comment (tid, uid, title, text, date) VALUES ('.$this->tid.', '.$this->uid.', "Application of '.htmlentities($this->uname).'", "'.$this->formatText($this->text).'", "'.$this->date.'")');
 			$_SESSION['user'] = $this->uid;
 			setCookie('user', $this->uid, time() + 60*60*24*7);
+			$this->db->query('INSERT INTO latest_posts (type, refid, permission) VALUES (0, "'.$this->db->query('SELECT cid FROM forum_topics_comment WHERE tid ="'.$this->tid.'" AND uid ='.$this->uid.' AND date ="'.$this->date.'" AND text ="'.$this->formatText($this->text).'"')->fetch()->cid.'", '.$this->db->query('SELECT permission FROM forum_section_topics a JOIN forum_section b ON a.sid = b.sid WHERE a.gtid =37')->fetch()->permission.')');
 			$this->goHome(true);
 		}else{
 			$this->goHome(false);

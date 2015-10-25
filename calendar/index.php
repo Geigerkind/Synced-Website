@@ -3,6 +3,8 @@ require_once __DIR__ .'/../Init.php';
 
 class BSite extends Site{
 	private $curTimestamp = 0;
+	private $before = "";
+	private $before2 = "";
 	
 	private function goHome(){
 		if(!isset($_GET["date"]) OR empty($_GET["date"])){
@@ -61,13 +63,13 @@ class BSite extends Site{
 			';
 			for($i = 0; $i < 7; $i++){
 				if($this->userAgent->isConfirmed())
-					$row = $this->db->query('SELECT eventid, title, img FROM calender_event WHERE date = "'.date('d.m.Y', $this->curTimestamp + ($this->getFirstDay()+($ii*7)+$i)*86400).'"')->fetch();
+					$row = $this->db->query('SELECT eventid, title, img FROM calender_event WHERE date = "'.date('d.m.Y', $this->curTimestamp + ($this->getFirstDay()+($ii*7)+$i)*86400+5000).'"')->fetch();
 				if($i != 0)
 					$borderL = 'border-left';
 				$content .= '
-					<a href="{host}/calendar/event/?date='.date('d.m.Y', $this->curTimestamp + ($this->getFirstDay()+($ii*7)+$i)*86400).'">
+					<a href="{host}/calendar/event/?date='.date('d.m.Y', $this->curTimestamp + ($this->getFirstDay()+($ii*7)+$i)*86400+5000).'">
 						<div class="row-ca-day-column '.$borderL.' padding-5 float-left">
-							<div class="row-ca-day-column-count text-bold">'.$this->getDay($this->curTimestamp + ($this->getFirstDay()+($ii*7)+$i)*86400).'</div>
+							<div class="row-ca-day-column-count text-bold">'.$this->getDay($this->curTimestamp + ($this->getFirstDay()+($ii*7)+$i)*86400+5000).'</div>
 							<div class="row-ca-day-column-title">'.$row->title.'</div>
 							<div class="row-ca-day-column-time"></div>
 						</div>
