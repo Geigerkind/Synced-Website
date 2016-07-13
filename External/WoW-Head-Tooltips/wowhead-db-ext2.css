@@ -28,7 +28,7 @@
 }
 
 .wowhead-tooltip td,.wowhead-tooltip th {
-    background: url(//db.valkyrie-wow.org/templates/wowhead/images/tooltip.png);
+    background: url(//wow.zamimg.com/images/wow/tooltip.png);
     font-family: Verdana,sans-serif;
     font-size: 12px;
     line-height: 17px;
@@ -85,7 +85,7 @@
 .wowhead-tooltip p div {
     width: 44px;
     height: 44px;
-    background-image: url(//db.valkyrie-wow.org/templates/wowhead/images/icon_border_medium.png);
+    background-image: url(//wow.zamimg.com/images/wow/icon_border_medium.png);
 }
 
 .wowhead-tooltip table.shrink b {
@@ -122,32 +122,32 @@
 
 .moneygold {
     padding-right: 15px;
-    background-image: url(//db.valkyrie-wow.org/templates/wowhead/images/money-gold.gif);
+    background-image: url(//wow.zamimg.com/images/icons/money-gold.gif);
 }
 
 .moneysilver {
     padding-right: 15px;
-    background-image: url(//db.valkyrie-wow.org/templates/wowhead/images/money-silver.gif);
+    background-image: url(//wow.zamimg.com/images/icons/money-silver.gif);
 }
 
 .moneycopper {
     padding-right: 15px;
-    background-image: url(//db.valkyrie-wow.org/templates/wowhead/images/money-copper.gif);
+    background-image: url(//wow.zamimg.com/images/icons/money-copper.gif);
 }
 
 .alliance-icon {
     padding-left: 12px;
-    background: url(//db.valkyrie-wow.org/templates/wowhead/images/alliance-icon.gif) left center no-repeat;
+    background: url(//wow.zamimg.com/images/wow/icons/small/inv_bannerpvp_01.jpg) left center no-repeat;
 }
 
 .alliance2-icon {
     padding-left: 18px;
-    background: url(//db.valkyrie-wow.org/templates/wowhead/images/alliance-icon.gif) 4px center no-repeat;
+    background: url(//wow.zamimg.com/images/wow/icons/small/inv_bannerpvp_02.jpg) 4px center no-repeat;
 }
 
 .horde-icon {
     padding-left: 18px;
-    background: url(//db.valkyrie-wow.org/templates/wowhead/images/horde-icon.gif) left center no-repeat;
+    background: url(//wow.zamimg.com/images/wow/icons/small/inv_bannerpvp_02.jpg) left center no-repeat;
 }
 
 .q,.q a,.color-q,.wowhead-tooltip .q a {

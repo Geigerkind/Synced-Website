@@ -34,7 +34,7 @@ class BSite extends Site{
 		$q1 = $this->db->query('SELECT * FROM calender_event_participants a JOIN user_char b ON a.charid = b.charid JOIN user c ON b.uid = c.uid WHERE a.role = 3 AND a.eventid ='.$row->eventid);
 		$q2 = $this->db->query('SELECT * FROM calender_event_participants a JOIN user_char b ON a.charid = b.charid JOIN user c ON b.uid = c.uid WHERE a.role = 1 AND a.eventid ='.$row->eventid);
 		$q3 = $this->db->query('SELECT * FROM calender_event_participants a JOIN user_char b ON a.charid = b.charid JOIN user c ON b.uid = c.uid WHERE a.role = 2 AND a.eventid ='.$row->eventid);
-		if ($this->userAgent->isClassLeader())
+		if ($this->userAgent->isOfficer())
 			$officeredit = '<span class="float-right"><a href="{path}calendar/event/cedit/index.php?eventid='.$row->eventid.'&date='.$_GET["date"].'">edit </a><a href="{path}Modules/calendar/deleteEvent.php?eventid='.$row->eventid.'"><img src="{path}calendar/event/img/trashcan.png" /></a></span>';
 		$content .= '
 			<div class="event-content-box border border-radius box-color min-height padding-10">
@@ -69,7 +69,7 @@ class BSite extends Site{
 				$note = '*';
 			else
 				$val->note = '[NO NOTE]';
-			if ($this->userAgent->isClassLeader())
+			if ($this->userAgent->isOfficer())
 				$officerrowedit = 'onclick="PopUserHandler('.$val->uid.','.$row->eventid.', \''.$row->date.'\')"';
 			$content .= '
 								<div class="player-role-row color-'.strtolower($val->class).'" style="background-image: url(\'img/member_'.strtolower($val->class).'.png\');" title="Submited on '.$val->date.'&#13;Note: '.$val->note.'" '.$officerrowedit.'>'.$val->name.$note.'</div>
@@ -88,7 +88,7 @@ class BSite extends Site{
 				$note = '*';
 			else
 				$val->note = '[NO NOTE]';
-			if ($this->userAgent->isClassLeader())
+			if ($this->userAgent->isOfficer())
 				$officerrowedit = 'onclick="PopUserHandler('.$val->uid.','.$row->eventid.', \''.$row->date.'\')"';
 			$content .= '
 								<div class="player-role-row color-'.strtolower($val->class).'" style="background-image: url(\'img/member_'.strtolower($val->class).'.png\');" title="Submited on '.$val->date.'&#13;Note: '.$val->note.'" '.$officerrowedit.'>'.$val->name.$note.'</div>
@@ -107,7 +107,7 @@ class BSite extends Site{
 				$note = '*';
 			else
 				$val->note = '[NO NOTE]';
-			if ($this->userAgent->isClassLeader())
+			if ($this->userAgent->isOfficer())
 				$officerrowedit = 'onclick="PopUserHandler('.$val->uid.','.$row->eventid.', \''.$row->date.'\')"';
 			$content .= '
 								<div class="player-role-row color-'.strtolower($val->class).'" style="background-image: url(\'img/member_'.strtolower($val->class).'.png\');" title="Submited on '.$val->date.'&#13;Note: '.$val->note.'" '.$officerrowedit.'>'.$val->name.$note.'</div>
@@ -133,7 +133,7 @@ class BSite extends Site{
 					$note = '*';
 				else
 					$o->note = '[NO NOTE]';
-				if ($this->userAgent->isClassLeader())
+				if ($this->userAgent->isOfficer())
 					$officerrowedit = 'onclick="PopUserHandler('.$o->uid.','.$row->eventid.', \''.$row->date.'\')"';
 				$content .= '
 									<div class="player-role-row color-'.strtolower($o->class).'" style="background-image: url(\'img/member_'.strtolower($o->class).'.png\');" title="Submited on '.$o->date.'&#13;Note: '.$o->note.'" '.$officerrowedit.'>'.$o->name.$note.'</div>
@@ -161,7 +161,7 @@ class BSite extends Site{
 					$note = '*';
 				else
 					$o->note = '[NO NOTE]';
-				if ($this->userAgent->isClassLeader())
+				if ($this->userAgent->isOfficer())
 					$officerrowedit = 'onclick="PopUserHandler('.$o->uid.','.$row->eventid.', \''.$row->date.'\')"';
 				$content .= '
 									<div class="player-role-row color-'.strtolower($o->class).'" style="background-image: url(\'img/member_'.strtolower($o->class).'.png\');" title="Submited on '.$o->date.'&#13;Note: '.$o->note.'" '.$officerrowedit.'>'.$o->name.$note.'</div>
@@ -189,7 +189,7 @@ class BSite extends Site{
 					$note = '*';
 				else
 					$o->note = '[NO NOTE]';
-				if ($this->userAgent->isClassLeader())
+				if ($this->userAgent->isOfficer())
 					$officerrowedit = 'onclick="PopUserHandler('.$o->uid.','.$row->eventid.', \''.$row->date.'\')"';
 				$content .= '
 									<div class="player-role-row color-'.strtolower($o->class).'" style="background-image: url(\'img/member_'.strtolower($o->class).'.png\');" title="Submited on '.$o->date.'&#13;Note: '.$o->note.'" '.$officerrowedit.'>'.$o->name.$note.'</div>
@@ -215,7 +215,7 @@ class BSite extends Site{
 				$note = '*';
 			else
 				$u->note = '[NO NOTE]';
-			if ($this->userAgent->isClassLeader())
+			if ($this->userAgent->isOfficer())
 				$officerrowedit = 'onclick="PopUserHandler('.$u->uid.','.$row->eventid.', \''.$row->date.'\')"';
 			$content .= '
 								<div class="signedOut-row float-left color-'.strtolower($u->class).'" style="background-image: url(\'img/member_'.strtolower($u->class).'.png\');" title="Submited on '.$u->date.'&#13;Note: '.$u->note.'" '.$officerrowedit.'>'.$u->name.$note.'</div>
@@ -237,13 +237,13 @@ class BSite extends Site{
 				$note = '*';
 			else
 				$u->note = '[NO NOTE]';
-			if ($this->userAgent->isClassLeader())
+			if ($this->userAgent->isOfficer())
 				$officerrowedit = 'onclick="PopUserHandler('.$u->uid.','.$row->eventid.', \''.$row->date.'\')"';
 			$content .= '
 								<div class="signedOut-row float-left color-'.strtolower($u->class).'" style="background-image: url(\'img/member_'.strtolower($u->class).'.png\');" title="Submited on '.$u->date.'&#13;Note: '.$u->note.'" '.$officerrowedit.'>'.$u->name.$note.'</div>
 			';
 		}
-		$z3 = $this->db->query('SELECT * FROM user a JOIN user_char b ON a.uid = b.uid WHERE b.mainChar = 1 AND a.confirmed = 1 AND a.rank > 0 AND a.uid NOT IN (SELECT uid FROM calender_event_participants WHERE eventid='.$row->eventid.')');
+		$z3 = $this->db->query('SELECT * FROM user a JOIN user_char b ON a.uid = b.uid WHERE b.mainChar = 1 AND a.confirmed = 1 AND a.rank > 1 AND a.uid NOT IN (SELECT uid FROM calender_event_participants WHERE eventid='.$row->eventid.')');
 		$content .= '
 							</div>
 						</div>
@@ -259,7 +259,7 @@ class BSite extends Site{
 				$note = '*';
 			else
 				$u->note = '[NO NOTE]';
-			if ($this->userAgent->isClassLeader())
+			if ($this->userAgent->isOfficer())
 				$officerrowedit = 'onclick="PopUserHandler('.$u->uid.','.$row->eventid.', \''.$row->date.'\')"';
 			$content .= '
 								<div class="signedOut-row float-left color-'.strtolower($u->class).'" style="background-image: url(\'img/member_'.strtolower($u->class).'.png\');" title="Submited on '.$u->date.'&#13;Note: '.$u->note.'" '.$officerrowedit.'>'.$u->name.$note.'</div>
@@ -271,7 +271,7 @@ class BSite extends Site{
 					</div>
 				</div>
 		';
-		if ($this->userAgent->isClassLeader()){
+		if ($this->userAgent->isOfficer()){
 			$content .= '
 				<div id="u-handler" class="user-handler invisible">
 					<div class="user-handler-row"><a href="" id="u-link1">Remove Player</a></div>
@@ -329,6 +329,10 @@ class BSite extends Site{
 										<option>Tank</option>
 										<option>Heal</option>
 										<option>Sign Out</option>
+			';
+		}elseif ($this->db->query('SELECT pid FROM calender_event_participants WHERE uid = '.$this->userAgent->uid.' AND role IN (1,2,3,4)')->rowCount()>0){
+			$content .= '
+										<option>Update message</option>
 			';
 		}else{
 			$content .= '
@@ -429,7 +433,7 @@ class BSite extends Site{
 		if($this->availableContent()){
 			$content .= $this->getContent();
 		}else{
-			if($this->userAgent->isConfirmed() and $this->userAgent->isClassLeader())
+			if($this->userAgent->isConfirmed() and $this->userAgent->isOfficer())
 				$content .= $this->getForm();
 			else
 				$this->goHomeRaw();

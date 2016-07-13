@@ -94,33 +94,34 @@ class BSite extends Site{
 							<div class="thread-bbcode-box-button border-radius float-left" title="Add Item: [item]itemid[/item]" onclick="textarea_bbcode(\'item\')">Item</div>
 						</div>
 						<textarea class="thread-textarea" id="textedit" name="text">
-[color=#586f75][b][u][Personal Information][/u][/b][/color]
-[b]Name:[/b]
-[b]Age:[/b]
-[b]Nationality:[/b]
+[b][color=#778899]Start by telling us a bit about yourself, including your age, country of origin and details concerning your raiding experience.[/color][/b]
 
-[color=#586f75][b][u][Character Information][/u][/b][/color]
-[b]Name:[/b]
-[b]Level:[/b]
-[b]Race:[/b]
-[b]Class:[/b]
-[b]Spec:[/b]
-[b]Armory:[/b]
+[b][color=#778899]Please link us your Armory profile.[/color][/b]
 
-[color=#586f75][b][u][What kind of WoW experience do you have?][/u][/b][/color]
-[b][u]Retail raiding experience (Primarily Vanilla):[/u][/b]
+[b][color=#778899]Please link us what talent build(s) you are planning to employ in our raids. Explain your choice.[/color][/b]
 
-[b][u]Private Server experience (Primarily Vanilla):[/u][/b]
+[b][color=#778899]Please link us an image of your User Interface. Raid Frames, Raid AddOns and keybinds must all be properly on display.[/color][/b]
 
-[color=#586f75][b][u][What is your goal on Kronos?][/u][/b][/color]
+[b][color=#778899]1) We raid on Thursdays and Sundays, from 18:55 to 23:00 Server Time. What attendance would this schedule allow you to maintain (80%, 90%, etc.)?
+Further, when new content is released, we may decide to raid on additional days or begin our raids at a different time, would you be able to rework your schedule accordingly?[/color][/b]
 
-[color=#586f75][b][u][Can you attend to the majority of our raids?][/u][/b][/color]
+[b][color=#778899]2) Synced is a competitive guild, where a majority of members employ all consumables and world buffs available, are you willing and able to prepare in the same fashion? List the consumables and world buffs you would acquire prior to a raid in our guild.[/color][/b]
 
-[color=#586f75][b][u][How do you prepare for raids (Please be specific)?][/u][/b][/color]
+[b][color=#778899]3) We ask our Warriors, Rogues and Hunters to level up Engineering for the Gnomish Battle Chicken\'s 5% AS party-wide buff, for Thorium Grenades, etc. Are you willing to comply with this request if you play one of the above-mentioned? Other Classes are not expected to do the same, but we recommend it.[/color][/b]
 
-[color=#586f75][b][u][Why do you think you\'re the right person for Synced?][/u][/b][/color]
+[b][color=#778899]4) Do you have a microphone and are you willing to verbally communicate relevant information during raids?[/color][/b]
 
-[color=#586f75][b][u][Should we know anything else?][/u][/b][/color]
+[b][color=#778899]5)  One of Synced\'s main goals is prevailing in the race for Realm Firsts. Would you be able to make this goal your own upon joining us?
+And what are your own goals on Kronos?[/color][/b]
+
+[b][color=#778899]6) Why do you think you\'re the right person for Synced?[/color][/b]
+
+[b][color=#778899]7) It is entirely possible that the gap between AQ and Naxxramas will be as wide as the one between BWL and AQ. How succesful do you think you would be in maintaining your attendance and performance levels during such an interval?
+How likely is it that your work or studies will severely interfere with your playtime sometime in the next 12 months?[/color][/b]
+
+[b][color=#778899]8) Have you read our basic [url=http://synced-kronos.com/faq/]Social, Raid and Activity rules[/url] and agree to abide by them while in Synced?[/color][/b]
+
+[b][color=#778899]9) If you think we should know anything else about you and should you have any questions concerning our guild, write it all below.[/color][/b]
 						</textarea>
 						<div class="squaredThree">
 							<input id="squaredThree" type="checkbox" checked="" name="check" value="None">

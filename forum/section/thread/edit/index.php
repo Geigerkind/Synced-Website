@@ -14,6 +14,12 @@ class BSite extends Site{
 		return str_replace(array('<br>', '<br />'), '', $text);
 	}
 	
+	private function isFirstPost(){
+		if ($this->db->query("SELECT MIN(cid) AS cid FROM forum_topics_comment WHERE tid = (SELECT tid FROM forum_topics_comment WHERE cid = ".intval($_GET["cid"]).")")->fetch()->cid == $_GET["cid"])
+			return true;
+		return false;
+	}
+	
 	private function leForm(){
 		$edit = $this->db->query('SELECT * FROM forum_topics_comment WHERE cid ='.$_GET["cid"])->fetch();
 		$this->goHome($edit->uid);
@@ -45,6 +51,17 @@ class BSite extends Site{
 						<textarea name="text" class="thread-textarea" id="textedit">'.$this->formatText($edit->text).'</textarea>
 					</div>
 					<div class="edit-bottom min-height padding-5">
+		';
+		if ($this->userAgent->isOfficer() && $this->isFirstPost()){
+			$form .= '
+				<div class="squaredThree float-left">
+					<input type="checkbox" value="None" id="squaredThreee" name="sticky" class="float-left" />
+					<label for="squaredThreee"> </label>
+					Sticky
+				</div>
+			';
+		}
+		$form .= '
 						<input type="hidden" value="'.$edit->tid.'" name="tid" />
 						<input type="hidden" value="'.$edit->cid.'" name="cid" />
 						<input type="submit" class="input-submit border border-radius box-color edit-submit text-bold margin-top-5" value="Submit" />

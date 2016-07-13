@@ -9,7 +9,7 @@ class DeleteNote{
 	private $location = '';
 	
 	private function isOfficer(){
-		if($this->db->query('SELECT rank FROM user WHERE uid ='.$this->uid)->fetch()->rank >= 5)
+		if($this->db->query('SELECT rank FROM user WHERE uid ='.$this->uid)->fetch()->rank >= 6)
 			return true;
 		else
 			return false;

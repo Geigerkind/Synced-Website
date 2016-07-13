@@ -84,8 +84,8 @@ class BSite extends Site{
 			';
 			$this->threads = $this->db->query('SELECT tid FROM forum_topics WHERE gtid = '.$row->gtid)->rowCount();
 			$this->curPage = $this->getCurPage();
-			foreach($this->db->query('SELECT a.img, a.title, a.tid, b.uid, b.name, a.date, a.gtid, b.confirmed, d.class, a.hits, (SELECT COUNT(vid) FROM forum_views WHERE tid = a.tid) as views, (SELECT COUNT(cid) FROM forum_topics_comment WHERE tid = a.tid) as replies FROM forum_topics a JOIN user b ON a.uid = b.uid JOIN forum_topics_comment c ON a.tid = c.tid JOIN user_char d ON d.uid = b.uid WHERE mainchar = 1 AND gtid = '.$row->gtid.' AND cid = (SELECT MAX(cid) FROM forum_topics_comment WHERE tid = a.tid) ORDER BY sticky DESC, b.confirmed, cid DESC LIMIT '.(($this->curPage-1)*20).', 20') AS $rowInfo){
-				$rowLatest = $this->db->query('SELECT a.cid, a.title, a.date, b.gtid, a.uid, c.name, a.tid, d.class, (SELECT COUNT(cid) FROM forum_topics_comment WHERE tid = a.tid) AS page FROM forum_topics_comment a JOIN forum_topics b ON a.tid = b.tid JOIN user c ON a.uid = c.uid JOIN user_char d ON d.uid = c.uid WHERE d.mainchar = 1 AND a.cid = (SELECT max(cid) FROM forum_topics_comment WHERE tid = '.$rowInfo->tid.')')->fetch();
+			foreach($this->db->query('SELECT a.sticky, a.img, a.title, a.tid, b.uid, b.name, a.date, a.gtid, b.confirmed, d.class, a.hits, (SELECT COUNT(vid) FROM forum_views WHERE tid = a.tid) as views, (SELECT COUNT(cid) FROM forum_topics_comment WHERE tid = a.tid) as replies FROM forum_topics a JOIN user b ON a.uid = b.uid JOIN forum_topics_comment c ON a.tid = c.tid JOIN user_char d ON d.uid = b.uid WHERE mainchar = 1 AND gtid = '.$row->gtid.' AND cid = (SELECT MAX(cid) FROM forum_topics_comment WHERE tid = a.tid) ORDER BY sticky DESC, cid DESC LIMIT '.(($this->curPage-1)*20).', 20') AS $rowInfo){
+				$rowLatest = $this->db->query('SELECT b.sticky, a.cid, a.title, a.date, b.gtid, a.uid, c.name, a.tid, d.class, (SELECT COUNT(cid) FROM forum_topics_comment WHERE tid = a.tid) AS page FROM forum_topics_comment a JOIN forum_topics b ON a.tid = b.tid JOIN user c ON a.uid = c.uid JOIN user_char d ON d.uid = c.uid WHERE d.mainchar = 1 AND a.cid = (SELECT max(cid) FROM forum_topics_comment WHERE tid = '.$rowInfo->tid.')')->fetch();
 				if($row->gtid == 37)
 					$app = $this->state($rowInfo->confirmed);
 				$section .= '
@@ -95,7 +95,7 @@ class BSite extends Site{
 								<div class="forum-row-left-pic-handler-pic" style="background-image: url(\'{path}forum/img/'.$rowInfo->img.'.png\');"></div>
 							</div>
 							<div class="forum-row-left-info float-left">
-								<div class="forum-row-left-info-title text-bold"><a href="{host}/forum/section/thread/?tid='.$rowInfo->tid.'" class="sy-yellow">'.$app.$this->shortenString(35, $rowInfo->title).'</a></div>
+								<div class="forum-row-left-info-title text-bold"><a href="{host}/forum/section/thread/?tid='.$rowInfo->tid.'" class="sy-yellow">'.($r = ($rowInfo->sticky == 1) ? '[Sticky] ' : '').$app.$this->shortenString(35, $rowInfo->title).'</a></div>
 								<div class="forum-row-left-info-content">Started by <a href="#" class="color-'.strtolower($rowInfo->class).'">'.$rowInfo->name.'</a>, '.$rowInfo->date.'</div>
 							</div>
 						</div>

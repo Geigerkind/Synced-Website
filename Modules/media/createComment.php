@@ -65,6 +65,7 @@ class CreateComment{
 	private function commit(){
 		if($this->validValues() AND $this->isConfirmed())
 			$this->db->query('INSERT INTO media_comments (uid, date, text, vmid) VALUES ('.$this->uid.', "'.$this->date.'", "'.$this->formatText($this->text).'", '.$this->vmid.')');
+			$this->db->query('INSERT INTO latest_posts (type, refid, permission) VALUES (1, '.($this->vmid).', 1)');
 		$this->goHome();
 	}
 	

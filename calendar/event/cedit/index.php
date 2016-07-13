@@ -37,6 +37,7 @@ class BSite extends Site{
 									<option '; if($row->img == 1){$content .= 'selected';} $content .='>Molten Core</option>
 									<option '; if($row->img == 2){$content .= 'selected';} $content .='>Black Wing Lair</option>
 									<option '; if($row->img == 3){$content .= 'selected';} $content .='>Onyxia\'s Lair</option>
+									<option '; if($row->img == 4){$content .= 'selected';} $content .='>Zul\'Gurub</option>
 								</select>
 							</div>
 						</div>

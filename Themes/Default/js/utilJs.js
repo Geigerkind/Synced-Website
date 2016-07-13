@@ -107,7 +107,7 @@ function accSelect(f,g){
 			}
 		}
 	}else if(f != strUser){
-		Redirect("http://synced-kronos.net/account/?uid="+g+"&char="+strUser);
+		Redirect("http://synced-kronos.com/account/?uid="+g+"&char="+strUser);
 	}
 }
 function Redirect(url){

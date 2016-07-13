@@ -16,7 +16,7 @@ class AddNote{
 	}
 	
 	private function isOfficer(){
-		if($this->db->query('SELECT rank FROM user WHERE uid ='.$this->cuid)->fetch()->rank >= 5)
+		if($this->db->query('SELECT rank FROM user WHERE uid ='.$this->cuid)->fetch()->rank >= 6)
 			return true;
 		else
 			return false;

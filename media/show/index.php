@@ -131,7 +131,6 @@ class BSite extends Site{
 					</div>
 				</div>
 		';
-		if($this->userAgent->uid == $row->uid OR $this->userAgent->isOfficer())
 			$content .= '
 				<div class="show-box-form">
 					<form action="{path}Modules/media/createComment.php" method="post">

@@ -22,6 +22,9 @@ class EditEvent{
 			case 'Onyxia\'s Lair' :
 				return 3;
 				break;
+			case 'Zul\'Gurub' :
+				return 4;
+				break;
 			default :
 				return 0;
 				break;

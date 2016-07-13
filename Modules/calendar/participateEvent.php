@@ -25,6 +25,9 @@ class ParticipateEvent{
 			case 'Forgot to sign in' :
 				return 5;
 				break;
+			case 'Update message' :
+				return $this->db->query('SELECT role FROM calender_event_participants WHERE uid = "'.$this->uid.'" AND eventid = "'.$this->eventid.'"')->fetch()->role;
+				break;
 			default :
 				return 4;
 				break;

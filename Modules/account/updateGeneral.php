@@ -30,7 +30,7 @@ class UpdateGeneral{
 	}
 	
 	private function userValidation(){
-		if($this->uid == $this->actionUid OR $this->db->query('SELECT rank FROM user WHERE uid ='.$this->actionUid)->fetch()->rank >= 5)
+		if($this->uid == $this->actionUid OR $this->db->query('SELECT rank FROM user WHERE uid ='.$this->actionUid)->fetch()->rank >= 6)
 			return true;
 		else
 			return false;

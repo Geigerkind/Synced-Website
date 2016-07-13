@@ -32,6 +32,9 @@
 	background-position: center;
 	width: 30px;
 }
+.roster-player-row-natio{
+	background-size: 20px 13px;
+}
 .roster-player-row-name{
 	width: 160px;
 }
@@ -39,7 +42,7 @@
 	width: 120px;
 }
 .roster-player-row-jg{
-	width: 346px;
+	width: 173px;
 }
 .roster-player-row-toggle{
 	background-image: url('../../../roster/img/toggle.png');
@@ -81,4 +84,7 @@
 }
 .roster-player-char-row-prof{
 	width: 95px;
+}
+.color-Addon-Guru{
+	color: #ffb400;
 }

@@ -14,7 +14,7 @@ class BSite extends Site{
 					<div class="forum-title-row-right float-left">Last Post</div>
 				</div>
 			';
-			foreach($this->db->query('SELECT a.gtid, a.img, a.title, a.desc, (SELECT COUNT(b.tid) FROM forum_topics b WHERE gtid = a.gtid) as threads, (SELECT COUNT(c.cid) FROM forum_topics_comment c WHERE c.tid IN (SELECT d.tid FROM forum_topics d WHERE d.gtid = a.gtid)) AS posts FROM forum_section_topics a WHERE a.sid = '.$row->sid.' ORDER BY prio DESC') AS $rowInfo){
+			foreach($this->db->query('SELECT a.gtid, a.img, a.title, a.desc, (SELECT COUNT(b.tid) FROM forum_topics b WHERE gtid = a.gtid) as threads, (SELECT COUNT(c.cid) FROM forum_topics_comment c WHERE c.tid IN (SELECT d.tid FROM forum_topics d WHERE d.gtid = a.gtid)) AS posts FROM forum_section_topics a WHERE a.sid = '.$row->sid.' AND readpermission <= '.$this->userAgent->rank.' ORDER BY prio DESC') AS $rowInfo){
 				$rowLatest = $this->db->query('SELECT a.cid, b.gtid, a.tid, a.uid, b.title, a.date, c.name, d.class, (SELECT COUNT(cid) FROM forum_topics_comment WHERE tid = a.tid) AS pages FROM forum_topics_comment a JOIN forum_topics b ON a.tid = b.tid JOIN user c ON a.uid = c.uid JOIN user_char d ON d.uid = c.uid WHERE d.mainchar = 1 AND a.cid = (SELECT MAX(cid) FROM forum_topics_comment JOIN forum_topics ON forum_topics_comment.tid = forum_topics.tid WHERE gtid = '.$rowInfo->gtid.')')->fetch();
 				if(!empty($rowLatest->name)){ $latest = 'by <a href="#" class="color-'.strtolower($rowLatest->class).'">'.$rowLatest->name.'</a>'; }else{ $latest = 'None'; }
 				$section .= '

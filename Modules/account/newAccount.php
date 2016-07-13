@@ -82,7 +82,7 @@ class NewAccount{
 	
 	private function commit(){
 		if($this->testValues()){
-			$this->db->query('INSERT INTO user (name, pass, jgdate) VALUES ("'.$this->uname.'", "'.$this->pass.'", "'.date('d.m.y').'")');
+			$this->db->query('INSERT INTO user (name, pass, jgdate, timestamp, rank) VALUES ("'.$this->uname.'", "'.$this->pass.'", "'.date('d.m.y').'", '.time().', 2)');
 			$this->uid = $this->db->query('SELECT uid FROM user WHERE name = "'.$this->uname.'" AND pass = "'.$this->pass.'"')->fetch()->uid;
 			$this->db->query('INSERT INTO user_char (uid, charName, race, class, mainchar) VALUES ('.$this->uid.', "'.$this->charname.'", "'.$this->race.'", "'.$this->class.'", 1)');
 			$this->db->query('INSERT INTO forum_topics (gtid, uid, title, date, descr) VALUES (37, '.$this->uid.', "Application of '.htmlentities($this->uname).'", "'.$this->date.'", "'.$this->formatText($this->text).'")');

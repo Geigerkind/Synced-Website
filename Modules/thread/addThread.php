@@ -11,6 +11,7 @@ class AddThread{
 	private $tid = null;
 	private $date = '';
 	private $poll = false;
+	private $sticky = 0;
 	private $duration = '';
 	private $args = array();
 	
@@ -69,7 +70,9 @@ class AddThread{
 	private function post(){
 		if(!empty($this->text) AND !empty($this->title)){
 			if($this->preventDoublePost()){
-				$this->db->query('INSERT INTO forum_topics (gtid, uid, title, date, descr, poll) VALUES ('.$this->gtid.', '.$this->uid.', "'.htmlentities($this->title, ENT_COMPAT, $charset).'", "'.$this->date.'", "'.$this->formatText($this->text).'", '.$this->poll.')');
+				if (isset($_POST["sticky"]))
+					$this->sticky = 1;
+				$this->db->query('INSERT INTO forum_topics (gtid, uid, title, date, descr, poll, sticky) VALUES ('.$this->gtid.', '.$this->uid.', "'.htmlentities($this->title, ENT_COMPAT, $charset).'", "'.$this->date.'", "'.$this->formatText($this->text).'", '.$this->poll.', '.$this->sticky.')');
 				$gtid = $this->gtid;
 				$var = $this->db->query('SELECT tid FROM forum_topics WHERE gtid ='.$this->gtid.' AND uid = '.$this->uid.' AND date = "'.$this->date.'"')->fetch();
 				$this->tid = $var->tid;

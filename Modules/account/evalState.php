@@ -9,7 +9,7 @@ class AppEvalState{
 	private $actionUid = 0;
 	
 	private function update(){
-		if($this->db->query('SELECT uid FROM user WHERE rank IN (5,6) AND uid ='.$this->actionUid)->rowCount() != 0)
+		if($this->db->query('SELECT uid FROM user WHERE rank IN (6,7,8) AND uid ='.$this->actionUid)->rowCount() != 0)
 			$this->db->query('UPDATE user SET confirmed = '.$this->state.' WHERE uid = '.$this->uid);
 		header('Location: ../../account/?uid='.$this->uid);
 		exit();

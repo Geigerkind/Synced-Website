@@ -6,7 +6,7 @@ class BSite extends Site{
 	
 	
 	private function getMemberAmount(){
-		return $this->db->query('SELECT uid FROM user WHERE confirmed = 1')->rowCount();
+		return $this->db->query('SELECT uid FROM user WHERE confirmed = 1 AND rank>0')->rowCount();
 	}
 	
 	private function getClassAmount($class){
@@ -14,7 +14,7 @@ class BSite extends Site{
 	}
 	
 	private function getUserInformation($class){
-		return $this->db->query('SELECT * FROM user a JOIN user_char b ON a.uid = b.uid JOIN ranks c ON a.rank = c.rid WHERE a.confirmed = 1 AND b.mainChar = 1 AND b.class = "'.$class.'" ORDER BY a.rank DESC, a.name');
+		return $this->db->query('SELECT * FROM user a JOIN user_char b ON a.uid = b.uid JOIN ranks c ON a.rank = c.rid WHERE a.confirmed = 1 AND b.mainChar = 1 AND b.class = "'.$class.'" AND a.rank>-1 ORDER BY a.rank DESC, a.name');
 	}
 	private function getUserCharInformation($uid){
 		return $this->db->query('SELECT * FROM user_char WHERE uid ='.$uid);
@@ -36,6 +36,7 @@ class BSite extends Site{
 							<div class="roster-player-row-name float-left"><a href="{path}../account/?uid='.$row->uid.'" class="color-'.strtolower($val).'">'.$row->name.'</a></div>
 							<div class="roster-player-row-rank float-left color-'.str_replace(" ", "", $row->rankname).'">'.$row->rankname.'</div>
 							<div class="roster-player-row-jg float-left">'.$row->jgdate.'</div>
+							<div class="roster-player-row-jg float-left">'.($r = ($this->userAgent->isOfficer()) ? gmdate("d.m.y H:i:s", $row->lastactive) : '').'</div>
 							<div class="roster-player-row-toggle float-left"></div>
 						</div>
 						<div id="roster-'.$row->name.'" class="roster-player-char-box border border-bottom-radius padding-5 min-height box-color invisible">
@@ -81,6 +82,8 @@ class BSite extends Site{
 	function __construct($db, $theme = '', $userAgent, $parser, $file){
 		parent::__construct($db, $theme, $userAgent, $parser, $file);
 		$this->setContentName('Roster ('.$this->getMemberAmount().')');
+		if (!$userAgent->isConfirmed())
+			header('Location: ../');
 	}
 }
 $site = new BSite($db, 'Default', $userAgent, $parser, __DIR__);

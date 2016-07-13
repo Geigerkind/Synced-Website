@@ -26,7 +26,7 @@ class BSite extends Site{
 				<div class="ls-overall-content min-height padding-5">
 		';
 		foreach($this->class AS $value){
-			$var = $this->db->query('SELECT user.uid, user.name, user_char.class, jgdate, (((SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = user.uid AND role IN (1,2,3) AND timestamp BETWEEN '.$this->tes.' AND '.$this->ts.') + 0.5*(SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = user.uid AND role = 4 AND timestamp BETWEEN '.$this->tes.' AND '.$this->ts.')) / (SELECT COUNT(eventid) FROM calender_event WHERE timestamp BETWEEN '.$this->tes.' AND '.$this->ts.')) AS ra30, (((SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = user.uid AND role IN (1,2,3) AND timestamp <= '.$this->ts.') + 0.5*(SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = user.uid AND role = 4 AND timestamp <= '.$this->ts.')) / (SELECT COUNT(eventid) FROM calender_event WHERE timestamp <= '.$this->ts.')) AS raaw FROM user JOIN user_char ON user.uid = user_char.uid WHERE user_char.class = "'.$value.'" AND confirmed = 1 AND mainChar = 1 AND user.rank != 0 ORDER BY user.rank DESC, user.name ASC');
+			$var = $this->db->query('SELECT ab.uid, ab.name, user_char.class, jgdate, (((SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = ab.uid AND role IN (1,2,3) AND timestamp BETWEEN '.$this->tes.' AND '.$this->ts.') + 0.5*(SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = ab.uid AND role = 4 AND timestamp BETWEEN '.$this->tes.' AND '.$this->ts.')) / (SELECT COUNT(eventid) FROM calender_event WHERE timestamp BETWEEN '.$this->tes.' AND '.$this->ts.')) AS ra30, (((SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = ab.uid AND role IN (1,2,3) AND timestamp <= '.$this->ts.') + 0.5*(SELECT COUNT(pid) FROM calender_event_participants JOIN calender_event ON calender_event_participants.eventid = calender_event.eventid WHERE calender_event_participants.uid = ab.uid AND role = 4 AND timestamp <= '.$this->ts.')) / (SELECT COUNT(eventid) FROM calender_event WHERE timestamp BETWEEN (SELECT timestamp FROM user z WHERE z.uid = ab.uid) AND '.$this->ts.' )) AS raaw FROM user ab JOIN user_char ON ab.uid = user_char.uid WHERE user_char.class = "'.$value.'" AND confirmed = 1 AND mainChar = 1 AND ab.rank != 0 ORDER BY ab.rank DESC, ab.name ASC');
 			$content .= '
 					<div class="ls-overall-class-seperator border-bottom" onclick="toggleUrl(\'ls-class-'.$value.'\', \'toClass\', \''.$value.'\')">
 						<div class="ls-overall-class-title text-bold float-left color-'.strtolower($value).'" style="background-image: url(\'img/ls_'.strtolower($value).'.png\');">'.$value.' <span class="color-normal">('.$var->rowCount().')</span></div>
@@ -42,7 +42,7 @@ class BSite extends Site{
 							<div class="ls-overall-player-column-name float-left color-'.strtolower($rowPlayer->class).'">'.$rowPlayer->name.'</div>
 							<div class="ls-overall-player-column-jd float-left" title="Date of entry">'.$rowPlayer->jgdate.'</div>
 							<div class="ls-overall-player-column-ra float-left" title="Raidattendance overall">'.($rowPlayer->raaw*100).' %</div>
-							<div class="ls-overall-player-column-ra float-left" title="Raidattendance last 30 days">'.($rowPlayer->ra30*100).' %</div>
+							<div class="ls-overall-player-column-ra float-left" title="Raidattendance last 90 days">'.($rowPlayer->ra30*100).' %</div>
 							<div class="ls-overall-player-column-toggle float-left" title="Toggle"></div>
 						</div>
 						<div id="ls-player-'.$rowPlayer->name.'" class="ls-overall-player-container border border-bottom-radius min-height invisible">
@@ -162,8 +162,10 @@ class BSite extends Site{
 	function __construct($db, $theme = '', $userAgent, $parser, $file){
 		parent::__construct($db, $theme, $userAgent, $parser, $file);
 		$this->ts = time();
-		$this->tes = $this->ts - 2592000;
+		$this->tes = $this->ts - 7776000;
 		$this->class = array('Warrior', 'Rogue', 'Priest', 'Hunter', 'Druid', 'Mage', 'Warlock', 'Paladin');
+		if (!$userAgent->isConfirmed())
+			header('Location: ../');
 	}
 }
 $site = new BSite($db, 'Default', $userAgent, $parser, __DIR__);

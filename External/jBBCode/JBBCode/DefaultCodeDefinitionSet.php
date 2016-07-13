@@ -213,12 +213,39 @@ class DefaultCodeDefinitionSet implements CodeDefinitionSet
 		$builder->setUseOption(true);
 		array_push($this->definitions, $builder->build());
 		
-		// New BBCode [item][/item]
+		// New BBCode [spell][/spell]
 		$builder = new CodeDefinitionBuilder('spell', '<a href="https://vanilla-twinhead.twinstar.cz/?spell={param}" rel="spell={param}" target="_blank">{param}</a>');
 		array_push($this->definitions, $builder->build());
 		
-		// New BBCode [item][/item]
+		// New BBCode [spell][/spell]
 		$builder = new CodeDefinitionBuilder('spell', '<a href="https://vanilla-twinhead.twinstar.cz/?spell={param}" rel="spell={option}" target="_blank">{param}</a>');
+		$builder->setUseOption(true);
+		array_push($this->definitions, $builder->build());
+		
+		// New BBCode [npc][/npc]
+		$builder = new CodeDefinitionBuilder('npc', '<a href="https://vanilla-twinhead.twinstar.cz/?npc={param}" rel="NPC={param}" target="_blank">{param}</a>');
+		array_push($this->definitions, $builder->build());
+		
+		// New BBCode [npc][/npc]
+		$builder = new CodeDefinitionBuilder('npc', '<a href="https://vanilla-twinhead.twinstar.cz/?npc={param}" rel="NPC={option}" target="_blank">{param}</a>');
+		$builder->setUseOption(true);
+		array_push($this->definitions, $builder->build());
+		
+		// New BBCode [object][/object]
+		$builder = new CodeDefinitionBuilder('object', '<a href="https://vanilla-twinhead.twinstar.cz/?object={param}" rel="object={param}" target="_blank">{param}</a>');
+		array_push($this->definitions, $builder->build());
+		
+		// New BBCode [object][/object]
+		$builder = new CodeDefinitionBuilder('object', '<a href="https://vanilla-twinhead.twinstar.cz/?object={param}" rel="object={option}" target="_blank">{param}</a>');
+		$builder->setUseOption(true);
+		array_push($this->definitions, $builder->build());
+		
+		// New BBCode [quest][/quest]
+		$builder = new CodeDefinitionBuilder('quest', '<a href="https://vanilla-twinhead.twinstar.cz/?quest={param}" rel="Quest={param}" target="_blank">{param}</a>');
+		array_push($this->definitions, $builder->build());
+		
+		// New BBCode [quest][/quest]
+		$builder = new CodeDefinitionBuilder('quest', '<a href="https://vanilla-twinhead.twinstar.cz/?quest={param}" rel="Quest={option}" target="_blank">{param}</a>');
 		$builder->setUseOption(true);
 		array_push($this->definitions, $builder->build());
 		

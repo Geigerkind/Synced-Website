@@ -8,6 +8,7 @@ class EditThread{
 	private $text = '';
 	private $tid = 0;
 	private $cid = 0;
+	private $sticky = 0;
 	
 	private function ignoreTag($tag, $text){
 		if (strpos($text,'['.$tag.']') !== false) {
@@ -46,8 +47,13 @@ class EditThread{
 	private function edit(){
 		if(!empty($this->text) AND !empty($this->title)){
 			$this->db->query('UPDATE forum_topics_comment SET title ="'.htmlentities($this->title, ENT_COMPAT, $charset).'", text="'.$this->formatText($this->text).'" WHERE cid ='.$this->cid);
-			if($this->cid == $this->db->query('SELECT min(cid) AS cid FROM forum_topics_comment WHERE tid ='.$this->tid)->fetch()->cid)
-				$this->db->query('UPDATE forum_topics SET title ="'.htmlentities($this->title, ENT_COMPAT, $charset).'", descr ="'.$this->formatText($this->text).'" WHERE tid ='.$this->tid);
+			if($this->cid == $this->db->query('SELECT min(cid) AS cid FROM forum_topics_comment WHERE tid ='.$this->tid)->fetch()->cid){
+				if ($this->sticky == 1){
+					$this->db->query('UPDATE forum_topics SET title ="'.htmlentities($this->title, ENT_COMPAT, $charset).'", descr ="'.$this->formatText($this->text).'", sticky = 1 WHERE tid ='.$this->tid);
+				}else{
+					$this->db->query('UPDATE forum_topics SET title ="'.htmlentities($this->title, ENT_COMPAT, $charset).'", descr ="'.$this->formatText($this->text).'", sticky = 0 WHERE tid ='.$this->tid);
+				}
+			}
 		}
 		$this->goHome();
 	}
@@ -58,6 +64,8 @@ class EditThread{
 		$this->text = $text;
 		$this->tid = $tid;
 		$this->cid = $cid;
+		if (isset($_POST["sticky"]))
+			$this->sticky = 1;
 		$this->edit();
 	}
 }

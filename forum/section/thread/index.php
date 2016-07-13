@@ -80,7 +80,7 @@ class BSite extends Site{
 	}
 	
 	private function addAppSpecial($gtid, $i, $confirmed, $tid, $uid){
-		if($gtid == 37 AND $i == 1 AND ($this->userAgent->isOfficer() OR $this->userAgent->isClassLeader()) AND $uid != 8){
+		if($gtid == 37 AND $i == 1 AND ($this->userAgent->isClassLeader()) AND $uid != 8){
 			$appSpecial .= '
 				<div class="thread-user-bottom-row min-height">
 					<form action="{path}Modules/thread/evalState.php" method="post">

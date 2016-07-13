@@ -3,7 +3,6 @@ error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
 
 session_start();
 date_default_timezone_set('Europe/Berlin');
-//header("charset=utf-8");
 mb_internal_encoding("UTF-8");
 
 require 'Database/Mysql.php';

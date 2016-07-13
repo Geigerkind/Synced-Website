@@ -1328,7 +1328,7 @@ $WH.Tooltip = {
         $WH.Tooltip.prepare();
 
         if (a) {
-            $WH.Tooltip.icon.style.backgroundImage = "url(http://db.valkyrie-wow.org/images/icons/medium/" + a.toLowerCase() + ".jpg)";
+            $WH.Tooltip.icon.style.backgroundImage = "url(http://wow-one.com/database/images/icons/medium/" + a.toLowerCase() + ".jpg)";
             $WH.Tooltip.icon.style.visibility = "visible";
         } else {
             $WH.Tooltip.icon.style.backgroundImage = "none";

@@ -50,8 +50,8 @@ class BSite extends Site{
 	}
 	
 	private function getRankOptions($rank, $ruid){
-		if($this->userAgent->rank >= 4 AND $ruid != $this->userAgent->uid){
-			$ranks = array('Inactive', 'Trialist', 'Member', 'Veteran', 'Classleader', 'Officer', 'Guild Master');
+		if($this->userAgent->rank >= 5 AND $ruid != $this->userAgent->uid){
+			$ranks = array('Inactive', 'Standby', 'Trialist', 'Member', 'Veteran', 'Classleader', 'Officer', 'Guild Master');
 			$content .= '<select name="rank" class="input-acc-dropdown input-dropdown border border-radius box-color">';
 				for($i = 0; $i <= sizeOf($ranks); $i++){
 					if($i < $this->userAgent->rank){

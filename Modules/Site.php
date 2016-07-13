@@ -38,7 +38,7 @@ abstract class Site extends phpquery {
 	}
 	private function addParams(){
 		$this->paramKey('location', 'http://'.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]);
-		$this->paramKey('host', $r = ($_SERVER[HTTP_HOST] == '127.0.0.1') ? 'http://127.0.0.1/SWebsite' : 'http://synced-kronos.net');
+		$this->paramKey('host', $r = ($_SERVER[HTTP_HOST] == '127.0.0.1') ? 'http://127.0.0.1/SWebsite' : 'http://synced-kronos.com');
 		$this->paramKey('date', date('01.n.Y'));
 	}
 	
@@ -160,6 +160,27 @@ abstract class Site extends phpquery {
 		}
 	}
 	
+	private function loadLatestThreads(){
+		if ($this->userAgent->isConfirmed()){
+			$content .= '
+								<div class="sideBar-module-container border-glow min-height box-color">
+									<div class="sideBar-module-container-title box-color-no-opa text-bordered">Latest threads</div>
+			';
+			foreach ($this->db->query('SELECT a.cid, a.uid, a.tid, a.title, c.class, b.name, a.date FROM forum_topics_comment a LEFT JOIN user b ON a.uid = b.uid LEFT JOIN user_char c ON b.uid = c.uid LEFT JOIN forum_topics d ON a.tid = d.tid LEFT JOIN forum_section_topics e ON d.gtid = e.gtid WHERE c.mainChar = 1 AND e.readpermission <= '.$this->userAgent->rank.' GROUP BY a.tid ORDER BY a.cid DESC LIMIT 8') as $row){
+				$content .= '
+					<div class="latest-posts-row min-height" style="margin: 0px auto;">
+						<div class="latest-posts-row-content min-height"><a href="{path}account/?uid='.$row->uid.'" class="color-'.strtolower($row->class).'">'.$row->name.'</a> added a new post in <a href="{host}/forum/section/thread/?tid='.$row->tid.'&page='.ceil($a/10).'#comment-'.$temp->cid.'" class="sy-yellow">'.$row->title.'</a></div>
+						<div class="latest-posts-row-title">'.$row->date.'</div>
+					</div>
+				';
+			}
+			$content .= '
+								</div>
+			';
+			pq('#new-threads')->append($content);
+		}
+	}
+	
 	private function loadLFM(){
 		if (!$this->userAgent->isLoggedIn() or !$this->userAgent->isConfirmed()){
 			pq('#sideBar-lfm')->append('
@@ -223,14 +244,14 @@ abstract class Site extends phpquery {
 	private function fillComponents(){
 		// LFM Prio
 		$this->loadLFM();
-		$this->setLFMPrio('warrior', 'Low');
-		$this->setLFMPrio('rogue', 'Medium');
-		$this->setLFMPrio('priest', 'Medium');
+		$this->setLFMPrio('warrior', 'Medium');
+		$this->setLFMPrio('rogue', 'Low');
+		$this->setLFMPrio('priest', 'Low');
 		$this->setLFMPrio('hunter', 'Low');
-		$this->setLFMPrio('druid', 'Medium');
-		$this->setLFMPrio('mage', 'Medium');
-		$this->setLFMPrio('warlock', 'Medium');
-		$this->setLFMPrio('paladin', 'Medium');
+		$this->setLFMPrio('druid', 'Low');
+		$this->setLFMPrio('mage', 'Low');
+		$this->setLFMPrio('warlock', 'Low');
+		$this->setLFMPrio('paladin', 'Low');
 		
 		// Alteration if logged in
 		if($this->userAgent->isLoggedIn())
@@ -241,6 +262,7 @@ abstract class Site extends phpquery {
 		
 		//New Events
 		$this->loadNewEvents();
+		$this->loadLatestThreads();
 		
 		// Raid Progress
 		$this->loadProgress();

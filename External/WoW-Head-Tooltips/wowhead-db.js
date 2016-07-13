@@ -121,7 +121,7 @@ if (typeof $WowheadPower == "undefined") {
 
                 if (t.href.indexOf("http://") == 0 || t.href.indexOf("https://") == 0) {
                     i0 = 1;
-                    m = t.href.match(/^https?:\/\/(db.valkyrie-wow.(com|ru|org))\/\??(npc|object|item|quest|spell)=([0-9]+)/);
+                    m = t.href.match(/^https?:\/\/(vanilla-twinhead.twinstar.(cz|com|ru|org))\/\??(npc|object|item|quest|spell)=([0-9]+)/);
                 } else {
                     m = t.href.match(/()\/\??(npc|object|item|quest|spell)=([0-9]+)/);
                 }
@@ -186,7 +186,7 @@ if (typeof $WowheadPower == "undefined") {
                         t.className += " icontinyl";
                         t.style.paddingLeft = "18px !important";
                         t.style.verticalAlign = "center";
-                        t.style.background = "url(//db.valkyrie-wow.org/images/icons/tiny/" + data.icon.toLocaleLowerCase() + ".gif) left center no-repeat";
+                        t.style.background = "url(//wow-one.com/database/images/icons/tiny/" + data.icon.toLocaleLowerCase() + ".gif) left center no-repeat";
                     }
 
                     if (wowhead_tooltips.colorlinks) {
@@ -288,7 +288,7 @@ if (typeof $WowheadPower == "undefined") {
                 }, 333)
             }
 
-            var url = document.location.protocol + "//db.valkyrie-wow.org/ajax.php";
+            var url = document.location.protocol + "//wow-one.com/database/ajax.php";
 
             $WH.g_ajaxIshRequest(url + "?" + LOOKUPS[type][1] + "=" + id + "&power");
         }
@@ -399,6 +399,10 @@ if (typeof $WowheadPower == "undefined") {
         this.request = function (type, id, locale) {
             initElement(type, id, locale);
             request(type, id, locale, 1);
+        };
+		
+		this.requestNpc = function (id) {
+            this.request(TYPE_NPC, id, Locale.getId());
         };
 
         this.requestItem = function (id, params) {

@@ -311,6 +311,7 @@
 	height: 20px;
 	line-height: 20px;
 	padding-left: 10px;
+	overflow: hidden;
 }
 .sideBar-newEvents-row-bottom{
 	background: rgba(35,35,35,0.5);

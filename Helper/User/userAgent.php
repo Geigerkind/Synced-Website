@@ -33,7 +33,7 @@ class UserAgent {
 	*/
 	private function evalPosts(){
 		if($this->isLoggedIn())
-			$this->db->query('Update user SET posts = '.$this->db->query('SELECT cid FROM forum_topics_comment WHERE uid = '.$this->uid)->rowCount().' WHERE uid = '.$this->uid);
+			$this->db->query('Update user SET posts = '.$this->db->query('SELECT cid FROM forum_topics_comment WHERE uid = '.$this->uid)->rowCount().', lastactive = '.time().' WHERE uid = '.$this->uid);
 	}
 	/*
 	* @return boolean
@@ -64,7 +64,7 @@ class UserAgent {
 	* @return boolean
 	*/
 	public function isOfficer(){
-		if($this->rank >= 5)
+		if($this->rank >= 6)
 			return true;
 		return false;
 	}
@@ -73,7 +73,7 @@ class UserAgent {
 	* @return boolean
 	*/
 	public function isClassLeader(){
-		if($this->rank >= 4)
+		if($this->rank >= 5)
 			return true;
 		return false;
 	}

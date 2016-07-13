@@ -49,6 +49,17 @@ class BSite extends Site{
 								<label for="squaredThree" onclick="toggle(\'newThread-poll\')"> </label>
 								Add a poll
 							</div>
+		';
+		if ($this->userAgent->isOfficer()){
+			$form .= '
+							<div class="squaredThree">
+								<input type="checkbox" value="None" id="squaredThreee" name="sticky" />
+								<label for="squaredThreee"> </label>
+								Sticky
+							</div>
+			';
+		}
+		$form .= '
 							<div id="newThread-poll" class="newThread-poll invisible">
 								<div class="newThread-poll-row">
 									<div class="newThread-poll-row-sep float-left">
