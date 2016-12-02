@@ -322,3 +322,9 @@
 	border: rgb(35,35,35) solid 1px;
 	margin-bottom: 5px;
 }
+
+.latest-threads{
+	height: 290px;
+	padding-left: 5px;
+	overflow-y: hidden;
+}

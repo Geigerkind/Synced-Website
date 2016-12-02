@@ -36,7 +36,7 @@ class BSite extends Site{
 							<div class="roster-player-row-name float-left"><a href="{path}../account/?uid='.$row->uid.'" class="color-'.strtolower($val).'">'.$row->name.'</a></div>
 							<div class="roster-player-row-rank float-left color-'.str_replace(" ", "", $row->rankname).'">'.$row->rankname.'</div>
 							<div class="roster-player-row-jg float-left">'.$row->jgdate.'</div>
-							<div class="roster-player-row-jg float-left">'.($r = ($this->userAgent->isOfficer()) ? gmdate("d.m.y H:i:s", $row->lastactive) : '').'</div>
+							<div class="roster-player-row-jg float-left">'.($r = ($this->userAgent->isOfficer()) ? gmdate("d.m.y H:i:s", $row->lastactive+7200) : '').'</div>
 							<div class="roster-player-row-toggle float-left"></div>
 						</div>
 						<div id="roster-'.$row->name.'" class="roster-player-char-box border border-bottom-radius padding-5 min-height box-color invisible">

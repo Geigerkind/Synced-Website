@@ -163,18 +163,20 @@ abstract class Site extends phpquery {
 	private function loadLatestThreads(){
 		if ($this->userAgent->isConfirmed()){
 			$content .= '
-								<div class="sideBar-module-container border-glow min-height box-color">
+								<div class="sideBar-module-container border-glow box-color">
 									<div class="sideBar-module-container-title box-color-no-opa text-bordered">Latest threads</div>
-			';
-			foreach ($this->db->query('SELECT a.cid, a.uid, a.tid, a.title, c.class, b.name, a.date FROM forum_topics_comment a LEFT JOIN user b ON a.uid = b.uid LEFT JOIN user_char c ON b.uid = c.uid LEFT JOIN forum_topics d ON a.tid = d.tid LEFT JOIN forum_section_topics e ON d.gtid = e.gtid WHERE c.mainChar = 1 AND e.readpermission <= '.$this->userAgent->rank.' GROUP BY a.tid ORDER BY a.cid DESC LIMIT 8') as $row){
+									<div class="scrollbar latest-threads">
+			';						
+			foreach ($this->db->query('SELECT a.cid, a.uid, a.tid, a.title, c.class, b.name, a.date, (SELECT COUNT(d.cid) FROM forum_topics_comment d WHERE d.tid=a.tid) AS num FROM forum_topics_comment a RIGHT JOIN (SELECT MAX(c.cid) cid, c.tid FROM forum_topics_comment c GROUP BY c.tid DESC ORDER BY MAX(c.cid) DESC) AS b ON a.cid = b.cid AND a.tid = b.tid RIGHT JOIN user b ON a.uid = b.uid RIGHT JOIN user_char c ON b.uid = c.uid RIGHT JOIN forum_topics d ON a.tid = d.tid RIGHT JOIN forum_section_topics e ON d.gtid = e.gtid WHERE c.mainChar = 1 AND e.readpermission <= '.$this->userAgent->rank.' LIMIT 20') as $row){
 				$content .= '
 					<div class="latest-posts-row min-height" style="margin: 0px auto;">
-						<div class="latest-posts-row-content min-height"><a href="{path}account/?uid='.$row->uid.'" class="color-'.strtolower($row->class).'">'.$row->name.'</a> added a new post in <a href="{host}/forum/section/thread/?tid='.$row->tid.'&page='.ceil($a/10).'#comment-'.$temp->cid.'" class="sy-yellow">'.$row->title.'</a></div>
+						<div class="latest-posts-row-content min-height"><a href="{path}account/?uid='.$row->uid.'" class="color-'.strtolower($row->class).'">'.$row->name.'</a> added a new post in <a href="{host}/forum/section/thread/?tid='.$row->tid.'&page='.ceil(($row->num-1)/10).'#comment-'.$row->cid.'" class="sy-yellow">'.$row->title.'</a></div>
 						<div class="latest-posts-row-title">'.$row->date.'</div>
 					</div>
 				';
 			}
 			$content .= '
+								</div>
 								</div>
 			';
 			pq('#new-threads')->append($content);
@@ -227,13 +229,17 @@ abstract class Site extends phpquery {
 	}
 	
 	private function loadShoutbox(){
-		foreach($this->db->query('SELECT user.uid, user.name, text, date, user_char.class FROM shoutbox JOIN user ON shoutbox.uid = user.uid JOIN user_char ON user.uid = user_char.uid WHERE mainChar = 1 ORDER BY gid DESC LIMIT 15') AS $row){
-			pq('#shoutbox')->append('
-								<div class="shoutbox-row min-height border">
-									<div class="shoutbox-row-title box-color-no-opa border-bottom"><a href="{path}account/?uid='.$row->uid.'" class="color-'.strtolower($row->class).'">'.$row->name.'</a> says on <span class="sy-yellow">'.$row->date.'</span>:</div>
-									<div class="shoutbox-row-content min-height box-color padding-5">'.$this->parser->parse($this->isLink($row->text))->getAsHtml().'</div>
-								</div>
-			');
+		if ($this->userAgent->isConfirmed() && $this->userAgent->rank!=0){
+			foreach($this->db->query('SELECT user.uid, user.name, text, date, user_char.class FROM shoutbox JOIN user ON shoutbox.uid = user.uid JOIN user_char ON user.uid = user_char.uid WHERE mainChar = 1 ORDER BY gid DESC LIMIT 15') AS $row){
+				pq('#shoutbox')->append('
+									<div class="shoutbox-row min-height border">
+										<div class="shoutbox-row-title box-color-no-opa border-bottom"><a href="{path}account/?uid='.$row->uid.'" class="color-'.strtolower($row->class).'">'.$row->name.'</a> says on <span class="sy-yellow">'.$row->date.'</span>:</div>
+										<div class="shoutbox-row-content min-height box-color padding-5">'.$this->parser->parse($this->isLink($row->text))->getAsHtml().'</div>
+									</div>
+				');
+			}
+		}else{
+			pq('#shoutbox')->append('Log in to view posts!');
 		}
 	}
 	

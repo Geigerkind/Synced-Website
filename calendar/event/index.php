@@ -330,7 +330,7 @@ class BSite extends Site{
 										<option>Heal</option>
 										<option>Sign Out</option>
 			';
-		}elseif ($this->db->query('SELECT pid FROM calender_event_participants WHERE uid = '.$this->userAgent->uid.' AND role IN (1,2,3,4)')->rowCount()>0){
+		}elseif ($this->db->query('SELECT pid FROM calender_event_participants WHERE uid = '.$this->userAgent->uid.' AND role IN (1,2,3,4) AND eventid = '.$row->eventid)->rowCount()>0){
 			$content .= '
 										<option>Update message</option>
 			';

@@ -10,7 +10,7 @@ class AppEvalState{
 	private $actionUid = 0;
 	
 	private function update(){
-		if($this->db->query('SELECT uid FROM user WHERE rank IN (5,6,7,8) AND uid ='.$this->actionUid)->rowCount() != 0)
+		if($this->db->query('SELECT uid FROM user WHERE rank >= 5 AND uid ='.$this->actionUid)->rowCount() != 0)
 			$this->db->query('UPDATE user SET confirmed = '.$this->state.', jgdate = "'.date('d.m.y').'", timestamp = '.time().' WHERE uid = '.$this->uid);
 		header('Location: ../../forum/section/thread/?tid='.$this->tid);
 		exit();
